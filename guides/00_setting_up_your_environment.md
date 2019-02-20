@@ -33,4 +33,10 @@ npm install -g generator-jhipster
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
-Congratulations! You are now ready to create an application. 
+Congratulations! You are now ready to create an application.
+
+Enter the next command line to start the next tutorial:
+
+```bash
+cloudshell launch-tutorial -d ~/jhipster-guides/guides/01_creating_your_application.md;
+```
