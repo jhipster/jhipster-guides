@@ -5,4 +5,4 @@
 
 Click the button to run the tutorial:
 
-[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/pierrebesson/jhipster-guides&tutorial=guides/01-greetings-java-hipster.md)
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/jhipster/jhipster-guides&tutorial=guides/01-greetings-java-hipster.md)
