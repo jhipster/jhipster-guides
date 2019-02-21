@@ -1,3 +1,5 @@
+
+
 # Create and run your first JHipster app with the CLI.
 
 <author name="JHipster team" repositoryUrl="[https://github.com](https://github.com/jhipster/jhipster-guides)" tutorialName="01-greetings-java-hipster"></author>
