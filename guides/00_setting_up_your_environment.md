@@ -37,6 +37,4 @@ Congratulations! You are now ready to create an application.
 
 Enter the next command line to start the next tutorial:
 
-```bash
-cloudshell launch-tutorial -d ~/jhipster-guides/guides/01_creating_your_application.md;
-```
+https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Hawkurane/jhipster-guides&tutorial=guides/01_creating_your_application.md
