@@ -1,5 +1,12 @@
 # 00. Setting up your environment
 
+<walkthrough-tutorial-duration duration="5">
+</walkthrough-tutorial-duration>
+
+## Google Cloud Shell
+We strongly recommend you to activate the boost mode in order to get better performance.
+To activate boost mode, find the 'Enable Boost Mode' option under the 'More' menu (the three dotted icon on the top right of Cloud Shell).
+
 ## Pre-requirements
 
 To run JHipster, you will need the following technologies.

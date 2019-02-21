@@ -1,8 +1,16 @@
 # 01. Creating your application
-
+<walkthrough-tutorial-duration duration="15">
+</walkthrough-tutorial-duration>
 ## Quick Start
 
 In this tutorial, we will create an application named BugTracker that is inspired from the issue tracking system from [GitHub](https://github.com/)
+ls
+
+0. We suggest you to go on you home directory first:
+
+```bash
+cd ~
+```
 
 1. First of all, create an empty directory in which you will create your application:
 
@@ -217,4 +225,4 @@ JHipster should start generating the files: here are some tips in the meanwhile.
 
 You can also use the Yeoman command-line options, like ```--force``` to automatically overwrite existing files. So if you want to regenerate your whole application, including its entities, you can run ```jhipster --force --with-entities```
 
-[![Create your application](https://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/pierrebesson/jhipster-guides&tutorial=tutorials/01_creating_your_application.md)
+
