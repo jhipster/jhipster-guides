@@ -34,13 +34,60 @@ What CI/CD pipeline do you want to generate?
 * GitLab CI
 * Travis CI
 
-In this tutorial we will choose **Travis CI**
+In this tutorial we will choose **Travis CI**.
 
 ---
 
 What tasks/integrations do you want to include?
 * Analyze your code with \*Sonar\* (requires SONAR_TOKEN set on CI service)
 * Deploy to \*Heroku\* (requires HEROKU_API_KEY set on CI service)
+
+In this tutorial we won't use Sonar or Heroku, juste press **Enter** to skip it.
+
+The JHipster sub-generator will generate a yaml configuration file for travis in the <walkthrough-editor-open-file filePath="BugTracker/.travis.yml">root project.</walkthrough-editor-open-file>
+
+
+
+## GitHub
+In this section, we will show you how to configure a remote repository with git on GitHub.
+
+1. Create an account or signin on [GitHub](https://github.com/)
+
+2. Create a new public repository named **BugTracker**
+
+Now, go on the BugTracker folder:
+```bash
+cd ~/BugTracker
+```
+
+and execute the following command:
+```bash
+git remote add origin https://github.com/YOUR_GITHUB/BugTracker
+```
+
+Now commit the file generated with the sub-generator for continuous integration:
+```bash
+git add .;git commit -m "message"
+```
+
+You can now push all the changes in the remote repository with the following command:
+```bash
+git push --set-upstream origin master
+```
+
+## Travis CI
+Travis CI is a service use to build and test software hosted on GitHub, when activated on a particular 
+repository, any push or pull request will trigger the build and tests using the <walkthrough-editor-open-file filePath="BugTracker/.travis.yml">configuration file.</walkthrough-editor-open-file>
+This is what we are going to do for the BugTracker projet.
+
+1. Signin on [Travis CI website](https://travis-ci.org/) with your GitHub account
+
+2. Go to your [repository list](https://travis-ci.org/account/repositories)
+
+3. Activate Travis CI for BugTracker repository
+
+Travis CI is now installed on BugTracker repository, you can try to commit and push a change.
+You will see [Travis](https://travis-ci.org/) running the tests.
 
 ---
 
