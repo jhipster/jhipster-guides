@@ -5,4 +5,4 @@
 
 Click the button to run the tutorial:
 
-[![Open in Cloud Shell (fork)](https://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/Hawkurane/jhipster-guides&tutorial=guides/00_setting_up_your_environment.md)
+[![Open in Cloud Shell (fork)](https://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/jhipster/jhipster-guides&tutorial=guides/00_setting_up_your_environment.md)
