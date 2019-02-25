@@ -1,5 +1,7 @@
 # JHipster App
 
+<walkthrough-tutorial-duration duration="10"></walkthrough-tutorial-duration>
+
 ## Running the application
 
 You have now a fully functionnal application built with JHipster, in this tutorial we will
