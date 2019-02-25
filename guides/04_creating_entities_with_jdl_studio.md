@@ -1,6 +1,6 @@
 # 04. Creating entities with JDL Studio
 
-<walkthrough-tutorial-duration duration="5">
+<walkthrough-tutorial-duration duration="10">
 </walkthrough-tutorial-duration>
 
 ## Introduction
@@ -8,7 +8,7 @@
 Now that your application is up and running, you will want to create _entities_. In your case, you might want to create entities for our BugTracker, for that you will need:
 
 * A database table
-* A Liquibase cahnge set
+* A Liquibase change set
 * A JPA Entity
 * A Spring Data JPA Repository
 * A Spring MVC REST Controller, which has the basic CRUD operations
@@ -26,20 +26,62 @@ The "entity" sub-generator will create all the necessary files, and provide a CR
 
 ## JDL Studio
 
-If you want to create many entities, which is your case, you might prefer to ue a graphical tool. In that case, we advise you to use [JDL Studio](https://start.jhipster.tech/jdl-studio/), our online tool to create entities and relationships using our domain-specific language [JDL](https://www.jhipster.tech/jdl/).
+If you want to create many entities, which is your case, you might prefer to use a graphical tool. In that case, we advise you to use [JDL Studio](https://start.jhipster.tech/jdl-studio/), our online tool to create entities and relationships using our domain-specific language [JDL](https://www.jhipster.tech/jdl/).
 
-After clicking on the JDL Studio link, an internet page will open: that is our JDL Studio. This is where you will create your entities.
+After clicking on the first link, an internet page will open: that is our JDL Studio. This is where you will create your entities.
+
+The entity declaration is done as follows:
+
+```
+entity <entity name> {
+    <field name> <type> [<validation> *]
+}
+```
+
+* `<entity name>` is the name of the entity
+* `<field name>` the name of one field of the entity
+* `<type>` the JHipster supported type of the field,
+* and as an option `<validation>` the validations for the field
+
+The possible types and validations are those described [here](https://www.jhipster.tech/jdl/?hl=fr#annexes), if the validation requires a value, simply add `(<value>)` right after the name of the validation.
+
+Here's an example of a JDL code:
+
+```
+entity A
+entity B
+entity C
+entity D {
+  name String required
+  address String required maxlength(100)
+  age Integer required min(18)
+}
+```
+
+Regexes are a bit special as they are used like this (from v1.3.6):
+
+```
+entity A {
+  myString String required minlength(1) maxlength(42) pattern(/[A-Z]+/)
+}
+```
+
+Because the JDL was made to be simple to use and read, if your entity is empty (no field), you can juste declare an entity with `entity A` or `entity A {}`.
+
+Note that JHipster adds a default `id` field so that you needn't worry about it.
 
 In the JDL Studio, declare the next entities:
 
-### Project
+**Project**
 
 * has a name of type `String`
 
-### Label
+**Label**
+
 * has a label of type `String` that is at least 3 characters long
 
-### Ticket
+**Ticket**
+
 * has a title of type `String` that is required
 * has a description of type `String`
 * has a dueDate of type `LocalDate`
@@ -66,11 +108,12 @@ JHipster support many field types. This support depends on your database backend
 * `Double`: A Java Double
 * `BigDecimal`: A [java.math.BigDecimal](https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html) object, used when you want exact mathematic calculations (often used for financial operations).
 * `LocalDate`: A [java.time.LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html) object, used to correctly manage dates in Java.
-* ̀`Instant`: A [java.time.Instant](https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html) object, used to represent a timestamp, an instantaneous point on the time-line.
+* `Instant`: A [java.time.Instant](https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html) object, used to represent a timestamp, an instantaneous point on the time-line.
 * `ZonedDateTime`: A [java.time.ZonedDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html) object, used to represent a local date-time in a given timezone (typically a calendar appointment). Note that time zones are neither supported by the REST nor by the persistence layers so you should most probably use `Instant` instead.
 * `Boolean`: A Java Boolean.
 * `Enumeration`: A Java Enumeration object. When this type is selected, the sub-generator will ask you what values you want in your enumeration and it will create a specific `enum` class to store them.
-* `Blob`: A Blob object, used to store some binary data. When this type is selected, the sub-generator will ask you if you want to store generic bianry data, an image object, or a CLOB(long text). Images will be handled specifically on the Angular side, so they can be displayed to the end user.
+* `Blob`: A Blob object, used to store some binary data. When this type is selected, the sub-generator will ask you if you want to store generic binary data, an image object, or a CLOB(long text). Images will be handled specifically on the Angular side, so they can be displayed to the end user.
+
 
 ## Validation
 
@@ -100,7 +143,22 @@ Validation has a few limitations:
 
 ## Relationships
 
-Now that you have created your initial entities, you will need to declare your relationships. Entity relationships are only available for SQL databases. It is a fairly complex subject, which has itsown documentation page: [Managing relationships](https://www.jhipster.tech/managing-relationships/).
+Now that you have created your initial entities, you will need to declare your relationships. Entity relationships are only available for SQL databases. It is a fairly complex subject, which has its own documentation page: [Managing relationships](https://www.jhipster.tech/managing-relationships/).
+The relationships declaration is done as follows:
+
+```
+relationship (OneToMany | ManyToOne | OneToOne | ManyToMany) {
+  <from entity>[{<relationship name>[(<display field>)]}] to <to entity>[{<relationship name>[(<display field>)]}]
+}
+```
+
+* `( OneToMany | ManyToOne | OneToOne | ManyToMany )` is the type of your relationship
+* `<from entity>` is the name of the entity owner of the relationship: the source
+* `<to entity>` is the name of the entity where the relationship goes: the destination
+* `<relationship name>` is the name of the field having the other end as type
+* `<display field>` is the name of the field that should show up in select boxes (default: `id`)
+* `required` whether the injected field is required
+* `with jpaDerivedIdentifier` whether `@MapsId` is used for the association (applicapble only for one-to-one)
 
 Append these to your .jh file:
 
@@ -142,3 +200,15 @@ Go to your project directory and type:
 ```bash
 jhipster import-jdl ~/jhipster-guides/res/jhipster-jdl.jh
 ```
+
+Run the generated test suite, with 
+
+```bash
+mvn test
+```
+
+Launch the application (for example with `mvn`), log in and click on "Entities" in the menu. You should see the entities that you've created before in the JDL Studio.
+
+<walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
+
+Congratulations! You now know how to create entities !
