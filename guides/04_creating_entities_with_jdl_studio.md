@@ -66,7 +66,7 @@ entity A {
 }
 ```
 
-Because the JDL was made to be simple to use and read, if your entity is empty (no field), you can juste declare an entity with `entity A` or `entity A {}`.
+Because the JDL was made to be simple to use and read, if your entity is empty (no field), you can just declare an entity with `entity A` or `entity A {}`.
 
 Note that JHipster adds a default `id` field so that you needn't worry about it.
 
@@ -92,7 +92,7 @@ To know more about entity fields, click on the Next button down there.
 
 ## Entity fields and field types
 
-For each entity, you can add as many fields as you want. You will need to input the field names and their types and JHipster will generate for you all the required code and configuration, frm the Angular HTML view to the Liquibase changelog.
+For each entity, you can add as many fields as you want. You will need to input the field names and their types and JHipster will generate for you all the required code and configuration, from the Angular HTML view to the Liquibase changelog.
 
 Those fields cannot contain reserved keywords in the technologies you are using. For example, if you use MySQL:
 
@@ -115,7 +115,7 @@ JHipster support many field types. This support depends on your database backend
 * `Blob`: A Blob object, used to store some binary data. When this type is selected, the sub-generator will ask you if you want to store generic binary data, an image object, or a CLOB(long text). Images will be handled specifically on the Angular side, so they can be displayed to the end user.
 
 
-## Validation
+##Validation
 
 Validation can be set up for each field. Depending on the field type, different validation options will be available.
 
@@ -193,7 +193,7 @@ If you look in the `res` folder, you will see a file named `jhipster-jdl.jh` tha
 
 ## Importing the .jh file
 
-After creating the .jh file, you can now generate intities from the JDL file using the `import-jdl` sub-generator, by running `bash jhipster import-jdl your-jdl-file.jh`
+After creating the .jh file, you can now generate entities from the JDL file using the `import-jdl` sub-generator, by running `bash jhipster import-jdl your-jdl-file.jh`
 
 Go to your project directory and type:
 
