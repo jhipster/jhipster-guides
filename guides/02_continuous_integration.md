@@ -98,5 +98,5 @@ Congratulations! You are now ready to create an application.
 Enter the next command line to start the next tutorial:
 
 ```bash
-cloudshell launch-tutorial -d ~/jhipster-guides/guides/01_creating_your_application.md;
+cloudshell launch-tutorial -d ~/jhipster-guides/guides/03_jhipster_app.md;
 ```

@@ -226,3 +226,13 @@ JHipster should start generating the files: here are some tips in the meanwhile.
 You can also use the Yeoman command-line options, like ```--force``` to automatically overwrite existing files. So if you want to regenerate your whole application, including its entities, you can run ```jhipster --force --with-entities```
 
 
+
+<walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
+
+Congratulations! You are now ready to create an application.
+
+Enter the next command line to start the next tutorial:
+
+```bash
+cloudshell launch-tutorial -d ~/jhipster-guides/guides/02_continuous_integration.md;
+```
