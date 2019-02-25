@@ -38,7 +38,7 @@ login/logout/error views. JHipster use Spring Security in order to use those vie
 By default, JHipster comes with 4 different users:
 * "system", who is mainly used by our audit logs, when something is done automatically
 * "anonymousUser", who is given to anonymous users when they do an action 
-* "user", whi is a normal user with "ROLE_USER" authorization. Hist default password is "admin"
+* "user", who is a normal user with "ROLE_USER" authorization. His default password is "admin"
 * "admin", who is an admin user with "ROLE_USER" and "ROLE_ADMIN" authorization. His default password is "admin"
 
 
