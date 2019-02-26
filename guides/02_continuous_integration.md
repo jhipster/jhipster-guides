@@ -53,16 +53,16 @@ In this section, we will show you how to configure a remote repository with git 
 
 1. Create an account or signin on [GitHub](https://github.com/)
 
-2. Create a new public repository named **BugTracker**
+2. Create a new public repository named **BugTrackerJHipster**
 
 Now, go on the BugTracker folder:
 ```bash
-cd ~/BugTracker
+cd ~/BugTrackerJHipster
 ```
 
 and execute the following command:
 ```bash
-git remote add origin https://github.com/YOUR_GITHUB/BugTracker
+git remote add origin https://github.com/YOUR_GITHUB/BugTrackerJHipster
 ```
 
 Now commit the file generated with the sub-generator for continuous integration:
@@ -84,7 +84,7 @@ This is what we are going to do for the BugTracker projet.
 
 2. Go to your [repository list](https://travis-ci.org/account/repositories)
 
-3. Activate Travis CI for BugTracker repository
+3. Activate Travis CI for BugTrackerJHipster repository
 
 Travis CI is now installed on BugTracker repository, you can try to commit and push a change.
 You will see [Travis](https://travis-ci.org/) running the tests.
@@ -93,7 +93,7 @@ You will see [Travis](https://travis-ci.org/) running the tests.
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
-Congratulations! You are now ready to create an application.
+Congratulations! You setted up the continuous integration on your project.
 
 Enter the next command line to start the next tutorial:
 

@@ -88,3 +88,9 @@ And that's about it !
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
 Congratulations ! You managed to create a new mapping for your server and improved the security of your application !
+
+Enter the next command line to start the next tutorial:
+
+```bash
+cloudshell launch-tutorial -d ~/jhipster-guides/guides/06_editing_front.md;
+```

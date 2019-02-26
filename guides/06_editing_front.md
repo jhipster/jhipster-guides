@@ -1,5 +1,8 @@
 # Editing the front end (Angular)
 
+<walkthrough-tutorial-duration duration="10">
+</walkthrough-tutorial-duration>
+
 In this guide, we will make our own Angular component in order to display the logged user's tickets.
 
 

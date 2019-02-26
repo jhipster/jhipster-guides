@@ -82,10 +82,10 @@ Changing the log level of a Java package is as simple as clicking on a button, w
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
-Congratulations! You are now ready to create an application.
+Congratulations!
 
 Enter the next command line to start the next tutorial:
 
 ```bash
-cloudshell launch-tutorial -d ~/jhipster-guides/guides/03_jhipster_app.md;
+cloudshell launch-tutorial -d ~/jhipster-guides/guides/04_creating_entities_with_jdl_studio.md;
 ```

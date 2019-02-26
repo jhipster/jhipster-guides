@@ -5,31 +5,23 @@
 
 In this tutorial, we will create an application named BugTracker that is inspired from the issue tracking system from [GitHub](https://github.com/)
 
-
-<<<<<<< HEAD
 ```bash
 cd ~
 ```
 
-1. First of all, create an empty directory in which you will create your application:
-
-```bash
-mkdir BugTrackerJHipster
-```
-
-2. Go to that directory:
+1. Go to that directory:
 
 ```bash
 cd BugTrackerJHipster
-=======
-1. First of all, go to the directory you've created in the previous tutorial
+```
+
+2. First of all, go to the directory you've created in the previous tutorial
 
 ```bash
 cd ~/BugTrackerJHipster
->>>>>>> 0e4746b311628579d76f6b3cbd33cc6eb24d19f6
 ```
 
-2. To generate your application, type:
+3. To generate your application, type:
 
 ```bash
 jhipster
@@ -234,7 +226,7 @@ You can also use the Yeoman command-line options, like ```--force``` to automati
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
-Congratulations! You are now ready to create an application.
+Congratulations! You have generated an application !
 
 Enter the next command line to start the next tutorial:
 

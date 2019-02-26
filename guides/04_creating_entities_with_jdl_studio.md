@@ -212,3 +212,9 @@ Launch the application (for example with `mvn`), log in and click on "Entities" 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
 Congratulations! You now know how to create entities !
+
+Enter the next command line to start the next tutorial:
+
+```bash
+cloudshell launch-tutorial -d ~/jhipster-guides/guides/05_updating_your_back-end.md;
+```

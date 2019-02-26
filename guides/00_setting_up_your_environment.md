@@ -43,7 +43,7 @@ To work with JHipster, we **highly** recommend you to use [GitHub](https://githu
 Start by creating a folder that will contain your future application, in our case we will create an application named BugTrackerJHipster so you can name your folder so.
 
 ```bash
-mkdir ~/BugTrackerJHipsterJHipster
+mkdir ~/BugTrackerJHipster
 ```
 After that, start by setting up your repository to make it ready to receive the generated application.
 
