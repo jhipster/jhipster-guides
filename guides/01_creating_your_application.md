@@ -4,10 +4,9 @@
 ## Quick Start
 
 In this tutorial, we will create an application named BugTracker that is inspired from the issue tracking system from [GitHub](https://github.com/)
-ls
 
-0. We suggest you to go on you home directory first:
 
+<<<<<<< HEAD
 ```bash
 cd ~
 ```
@@ -22,9 +21,15 @@ mkdir BugTrackerJHipster
 
 ```bash
 cd BugTrackerJHipster
+=======
+1. First of all, go to the directory you've created in the previous tutorial
+
+```bash
+cd ~/BugTrackerJHipster
+>>>>>>> 0e4746b311628579d76f6b3cbd33cc6eb24d19f6
 ```
 
-3. To generate your application, type:
+2. To generate your application, type:
 
 ```bash
 jhipster

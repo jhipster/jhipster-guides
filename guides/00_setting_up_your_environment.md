@@ -36,6 +36,21 @@ npm install -g yo
 npm install -g generator-jhipster
 ```
 
+## Creating a repository
+
+To work with JHipster, we **highly** recommend you to use [GitHub](https://github.com/). If you are unfamiliar with how versioning tools work, please head to the [documentations](https://guides.github.com/).
+
+Start by creating a folder that will contain your future application, in our case we will create an application named BugTrackerJHipster so you can name your folder so.
+
+```bash
+mkdir ~/BugTrackerJHipsterJHipster
+```
+After that, start by setting up your repository to make it ready to receive the generated application.
+
+Please note that the Google Cloud Shell will persist while the session is active and will stop after an hour of inactivity.
+
+This is why we recommend you to use a repository to make sure that your project is not lost, even when you are going for a lunch break !
+
 ---
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
