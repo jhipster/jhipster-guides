@@ -9,10 +9,10 @@ Right now, our tickets are not ordered, unless you click on the column header to
 First, head to the `TicketRepository.java` file in the back end part of your application and add the following method:
 
 ```Java
-Page<Ticket> findAllByOrderByDueDateAsc();
+Page<Ticket> findAllByOrderByDueDateAsc(Pageable pageable);
 ```
 
-Spring Data JPA will deduce its associated query by parsing the method name, that means you do not have to implement anything else.
+[Spring Data JPA](https://spring.io/projects/spring-data-jpa) will deduce its associated query by parsing the method name, that means you do not have to implement anything else.
 
 Now, head to the `TicketResource.java` file and change the `getAllTickets` function so that it instead uses our new function.
 
@@ -25,7 +25,7 @@ public ResponseEntity<List<Ticket>> getAllTickets(Pageable pageable, @RequestPar
         page = ticketRepository.findAllWithEagerRelationships(pageable);
     } else {
         //page = ticketRepository.findAll(pageable);
-        page = ticketRepository.findAllByOrderByDueDateAsc();
+        page = ticketRepository.findAllByOrderByDueDateAsc(pageable);
     }
     HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, String.format("/api/tickets?eagerload=%b", eagerload));
     return ResponseEntity.ok().headers(headers).body(page.getContent());
@@ -36,7 +36,7 @@ If you start your server again, you should see that the tickets are automaticall
 
 ## Assigned tickets
 
-Let's now add up a new API to our server: you want to show your end users their assigned tickets. For that, let's start with creating a new mapping, add this to the `TicketResource.java` file:
+Let's now add up a new API to our server: you want to show your end users only their assigned tickets. For that, let's start with creating a new mapping, add this to the `TicketResource.java` file:
 
 ```Java
 @GetMapping("/tickets/self")
@@ -65,4 +65,26 @@ Show the hidden contents by clicking on it and click on the **Try it out!** butt
 
 Right now, anyone can delete a ticket, even a normal user. We want to ensure that only an admin can delete a ticket.
 
-JHipster is using 
+JHipster is using [Spring Security](https://spring.io/projects/spring-security) to manage authentication and authorization for your application.
+
+To ensure that only an admin can delete a ticket, head to the `TicketResource.java` file again and add the following annotation on the `deleteTicket` method:
+
+```Java
+@DeleteMapping("/tickets/{id}")
+@Secured(AuthoritiesConstants.ADMIN)
+public ResponseEntity<Void> deleteTicket(@PathVariable Long id) {
+    ...
+}
+```
+
+If you're using the google cloud shell to edit files, remember to add the import:
+
+```Java
+import org.springframework.security.access.annotation.Secured;
+```
+
+And that's about it !
+
+<walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
+
+Congratulations ! You managed to create a new mapping for your server and improved the security of your application !
