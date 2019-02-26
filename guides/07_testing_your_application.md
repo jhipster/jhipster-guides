@@ -1,5 +1,8 @@
 # 07. Testing your application
 
+<walkthrough-tutorial-duration duration="10">
+</walkthrough-tutorial-duration>
+
 ## Introduction
 
 Hipster comes with an extensive set of tests, and each generated application has:
