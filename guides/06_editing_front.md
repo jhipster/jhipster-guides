@@ -12,7 +12,7 @@ Angular is using TypeScript instead of JavaScript, and as a result some specific
 to work efficiently with it. Our development workflow for an Angular 2+ application is as below, use 
 instead of yarn if you prefer that.
 
-1. When you generate an application the files are created and at the end of generation npm install task is triggered.
+1. When you generate an application, the files are created and at the end of generation npm install task is triggered.
 2. Once npm install is complete it calls the postInstall script in package.json, this step triggers the webpack:build task.
 3. Now you should have all files generated and compiled into the www folder inside the target or build folder based on the build tool (Maven or Gradle) selected.
 4. Now run **./mvnw** to launch the application server and it should be available at localhost:8080 this also serves the client side code compiled from the above steps.
