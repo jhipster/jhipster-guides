@@ -12,19 +12,13 @@ ls
 cd ~
 ```
 
-1. First of all, create an empty directory in which you will create your application:
-
-```bash
-mkdir BugTracker
-```
-
-2. Go to that directory:
+1. First of all, go to the directory you've created in the previous tutorial
 
 ```bash
 cd BugTracker
 ```
 
-3. To generate your application, type:
+2. To generate your application, type:
 
 ```bash
 jhipster
