@@ -15,13 +15,13 @@ cd ~
 1. First of all, create an empty directory in which you will create your application:
 
 ```bash
-mkdir BugTracker
+mkdir BugTrackerJHipster
 ```
 
 2. Go to that directory:
 
 ```bash
-cd BugTracker
+cd BugTrackerJHipster
 ```
 
 3. To generate your application, type:
