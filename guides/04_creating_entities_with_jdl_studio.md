@@ -189,7 +189,7 @@ Please note that pagination is not available if you created your application wit
 
 Pagination uses [the Link Header](https://tools.ietf.org/html/rfc5988), as in the [GitHub API](https://developer.github.com/v3/#pagination), JHipster provides a custom implementation of this specification on both the server (Spring MVC REST) and the client (Angular in our case) sides.
 
-If you look in the `res` folder, you will see a file named `jhipster-jdl.jh` that is the .jh file that should be exported when you click on the top right button "Download text file of this JDL". If you open it, you will see that it is what you've written before.
+If you look in the `res` folder, you will see a file named <walkthrough-editor-open-file filePath="jhipster-guides/res/jhipster-jdl.jh" text="jhipster-jdl.jh"></walkthrough-editor-open-file> that is the .jh file that should be exported when you click on the top right button "Download text file of this JDL". If you open it, you will see that it is what you've written before.
 
 ## Importing the .jh file
 

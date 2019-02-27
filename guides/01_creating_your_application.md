@@ -223,10 +223,11 @@ JHipster should start generating the files: here are some tips in the meanwhile.
 You can also use the Yeoman command-line options, like ```--force``` to automatically overwrite existing files. So if you want to regenerate your whole application, including its entities, you can run ```jhipster --force --with-entities```
 
 
-
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
 Congratulations! You have generated an application !
+
+If you've not yet added a repository on your github, we highly recommend you to do so. You can follow [GitHub's documentation](https://help.github.com/en/articles/adding-an-existing-project-to-github-using-the-command-line) to add this now existing project to your repository on GitHub.
 
 Enter the next command line to start the next tutorial:
 

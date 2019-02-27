@@ -44,7 +44,7 @@ What tasks/integrations do you want to include?
 
 In this tutorial we won't use Sonar or Heroku, juste press **Enter** to skip it.
 
-The JHipster sub-generator will generate a yaml configuration file for travis in the <walkthrough-editor-open-file filePath="BugTracker/.travis.yml">root project.</walkthrough-editor-open-file>
+The JHipster sub-generator will generate a yaml configuration file for travis in the <walkthrough-editor-open-file filePath="BugTrackerJHipster/.travis.yml">root project.</walkthrough-editor-open-file>
 
 
 
@@ -77,7 +77,7 @@ git push --set-upstream origin master
 
 ## Travis CI
 Travis CI is a service use to build and test software hosted on GitHub, when activated on a particular 
-repository, any push or pull request will trigger the build and tests using the <walkthrough-editor-open-file filePath="BugTracker/.travis.yml">configuration file.</walkthrough-editor-open-file>
+repository, any push or pull request will trigger the build and tests using the <walkthrough-editor-open-file filePath="BugTrackerJHipster/.travis.yml">configuration file.</walkthrough-editor-open-file>
 This is what we are going to do for the BugTracker projet.
 
 1. Signin on [Travis CI website](https://travis-ci.org/) with your GitHub account
