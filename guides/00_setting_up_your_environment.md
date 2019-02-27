@@ -24,13 +24,7 @@ From here, please do follow the steps even if you are using google shell cloud.
 npm install -g npm
 ```
 
-4. If you want to use the JHipster Marketplace, install Yeoman:
-
-```bash
-npm install -g yo
-```
-
-5. Install JHipster:
+4. Install JHipster:
 
 ```bash
 npm install -g generator-jhipster
@@ -44,6 +38,13 @@ Start by creating a folder that will contain your future application, in our cas
 
 ```bash
 mkdir ~/BugTrackerJHipster
+```
+
+If you're using Google Cloud Shell, please do set up your git like so : 
+
+```bash
+git config --global user.name "John Doe";
+git config --global user.email johndoe@example.com
 ```
 After that, start by setting up your repository to make it ready to receive the generated application.
 
