@@ -9,8 +9,7 @@ In this guide, we will make our own Angular component in order to display the lo
 ## Tooling
 
 Angular is using TypeScript instead of JavaScript, and as a result some specific tooling is necessary
-to work efficiently with it. Our development workflow for an Angular 2+ application is as below, use 
-instead of yarn if you prefer that.
+to work efficiently with it. Our development workflow for an Angular 2+ application is as below.
 
 1. When you generate an application, the files are created and at the end of generation npm install task is triggered.
 2. Once npm install is complete it calls the postInstall script in package.json, this step triggers the webpack:build task.
@@ -19,13 +18,13 @@ instead of yarn if you prefer that.
 ```bash
 ./mvnw
 ```
-5. Now run **npm start** or **yarn start** in a new terminal to launch Webpack dev-server with BrowserSync. This will take care of compiling your TypeScript code, and automatically reloading your browser.
+5. Now run **npm start** in a new terminal to launch Webpack dev-server with BrowserSync. This will take care of compiling your TypeScript code, and automatically reloading your browser.
 ```bash
 npm start
 ```
 6. Click on `walkthrough web-preview-icon` and watch the port **9000**. Now any change on your front end will be reflected here.
 
-If you start making changes to the client side code without having **npm start** or **yarn start** running, nothing will be reflected as the changes are not compiled so you need to either run npm run webpack:build manually after changes or have npm start or yarn start running.  
+If you start making changes to the client side code without having **npm start** running, nothing will be reflected as the changes are not compiled so you need to either run npm run webpack:build manually after changes or have npm start running.  
 More at the [JHipster website](https://www.jhipster.tech/using-angular/).
 
 ## Updating the service
