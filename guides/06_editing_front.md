@@ -303,3 +303,9 @@ However this should be empty since we have not created any entities.
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
 Congratulations! You now know how to edit your front !
+
+Enter the next command line to start the next tutorial:
+
+```bash
+cloudshell launch-tutorial -d ~/jhipster-guides/guides/07_testing_your_application.md;
+```

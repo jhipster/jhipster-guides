@@ -117,3 +117,14 @@ Those tests will launch a Web browser and use the application like a real user w
 Those tests can be run using `npm run e2e`.
 
 Please note that Protractor test needs a browser to run the protractor tests. If you are using Google Cloud Shell, you will not be able to run Protractor test. If you've set up a repository for your project, you can run them locally after cloning it on your computer.
+
+
+<walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
+
+Congratulations! You now know how to test your application !
+
+Enter the next command line to start the next tutorial:
+
+```bash
+cloudshell launch-tutorial -d ~/jhipster-guides/guides/08deploying_your_app.md;
+```
