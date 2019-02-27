@@ -3,25 +3,15 @@
 </walkthrough-tutorial-duration>
 ## Quick Start
 
-In this tutorial, we will create an application named BugTracker that is inspired from the issue tracking system from [GitHub](https://github.com/)
+In this tutorial, we will create an application named BugTrackerJHipster that is inspired from the issue tracking system from [GitHub](https://github.com/)
 
-```bash
-cd ~
-```
-
-1. Go to that directory:
-
-```bash
-cd BugTrackerJHipster
-```
-
-2. First of all, go to the directory you've created in the previous tutorial
+1. First of all, go to the directory you've created in the previous tutorial
 
 ```bash
 cd ~/BugTrackerJHipster
 ```
 
-3. To generate your application, type:
+2. To generate your application, type:
 
 ```bash
 jhipster
@@ -54,7 +44,7 @@ For your future projects, you can either use:
 
 3. What is the base name of your application?
 
-That is the name of your application. By default, it has the same name as the directory you are in. In our case, it displays BugTracker, press **Enter** to validate it.
+That is the name of your application. By default, it has the same name as the directory you are in. In our case, it displays BugTrackerJHipster, press **Enter** to validate it.
 
 ---
 

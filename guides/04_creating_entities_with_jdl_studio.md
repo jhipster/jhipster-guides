@@ -115,7 +115,7 @@ JHipster support many field types. This support depends on your database backend
 * `Blob`: A Blob object, used to store some binary data. When this type is selected, the sub-generator will ask you if you want to store generic binary data, an image object, or a CLOB(long text). Images will be handled specifically on the Angular side, so they can be displayed to the end user.
 
 
-##Validation
+## Validation
 
 Validation can be set up for each field. Depending on the field type, different validation options will be available.
 

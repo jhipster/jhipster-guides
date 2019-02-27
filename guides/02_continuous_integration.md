@@ -67,7 +67,7 @@ git remote add origin https://github.com/YOUR_GITHUB/BugTrackerJHipster
 
 Now commit the file generated with the sub-generator for continuous integration:
 ```bash
-git add .;git commit -m "message"
+git add .;git commit -m "initial commit"
 ```
 
 You can now push all the changes in the remote repository with the following command:

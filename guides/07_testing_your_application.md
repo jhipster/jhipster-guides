@@ -1,6 +1,6 @@
 # 07. Testing your application
 
-<walkthrough-tutorial-duration duration="10">
+<walkthrough-tutorial-duration duration="15">
 </walkthrough-tutorial-duration>
 
 ## Introduction
@@ -126,5 +126,5 @@ Congratulations! You now know how to test your application !
 Enter the next command line to start the next tutorial:
 
 ```bash
-cloudshell launch-tutorial -d ~/jhipster-guides/guides/08deploying_your_app.md;
+cloudshell launch-tutorial -d ~/jhipster-guides/guides/08_deploying_your_app.md;
 ```

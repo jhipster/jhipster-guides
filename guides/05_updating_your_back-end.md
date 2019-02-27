@@ -81,6 +81,9 @@ If you're using the google cloud shell to edit files, remember to add the import
 
 ```Java
 import org.springframework.security.access.annotation.Secured;
+import com.mycompany.bugtracker.security.AuthoritiesConstants;
+import io.swagger.annotations.ApiParam;
+import org.springframework.data.domain.PageImpl;JHisJfddfgdfgddfgdfgdfg
 ```
 
 And that's about it !

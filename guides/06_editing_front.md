@@ -58,7 +58,7 @@ npm install -g @angular/cli
 
 2. Go to the Angular root project
 ```bash
-cd ~/BugTracker/src/main/webapp/app
+cd ~/BugTrackerJHipster/src/main/webapp/app
 ```
 
 3. Generate the new component mytickets
@@ -252,6 +252,11 @@ Finally, we have to configure the route for our new component.
                     component: MyticketsComponent
                 }
 
+```
+
+Do not forget to import MyTicketsComponent in the app-routing.module.ts file.
+```typescript
+import { MyticketsComponent } from 'app/mytickets/mytickets.component';
 ```
 
 The file should look like this:
