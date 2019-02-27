@@ -73,7 +73,11 @@ For running Gatling tests on a microservice application, you have to:
 *   Run the microservice application
 *   Then, you can run Gatling tests
 
-In this tutorial, we've given you the gatling in a folder named `gatling`. It means you don't need to download anything if you've cloned the tutorial repository, and especially if you're doing this on Google Cloud Shell.
+In this tutorial, we've given you an installation script for Gatling.
+Run the following command to install it:
+```bash
+~/jhipster-guides/utils/install-gatling.sh
+```
 
 To run the Gatling test, head to:
 
