@@ -32,7 +32,7 @@ This is a feature to help us track [statistics](https://start.jhipster.tech/#/st
 
 2. Which _type_ of application would you like to create ?
 
-Your type of application depends on whether you wish to use a microservices architecture or not. A full explanation on microservices is [available here](https://www.jhipster.tech/microservices-architecture/), if unsure use the default _Monolithic application_. **That is what we are going with in this tutorial**.
+Your type of application depends on whether you wish to use a microservices architecture or not. A full explanation on microservices is [available here](https://www.jhipster.tech/microservices-architecture/), if unsure use the default _Monolithic application_. **That is what we are doing in this tutorial**.
 
 For your future projects, you can either use:
 * Monolithic application: that is a classical, one-size-fits-all application. It's easier to use and develop, and is our recommended default.
@@ -95,8 +95,8 @@ If you want to use Oracle, you will need to [install the Oracle JDBC driver manu
 8. Which _development_ database would you like to use?
 
 * H2, with its data stored on disk. This is a better option than running in-memory, as you won't lose your data upon application restart.
-* H2, running in-memory. This is easiest way to use JHipster, but your data will be lost when you restart your server.
-* The same database as the one you chose for production: it's a bit more complex to set up, but it should be better in the end to work on the same database as the one you will use in production. This is also the best way to use liquibase-hibernate as described in [the development guide](https://www.jhipster.tech/development/).
+* H2, running in-memory. This is the easiest way to use JHipster, but your data will be lost when you restart your server.
+* The same database as the one you chose for production: a bit more complex to set up, but working on the same database as the one you will use in production should be better at the end. This is also the best way to use liquibase-hibernate as described in [the development guide](https://www.jhipster.tech/development/).
 
 Take the **data-stored-on-disk-based H2** stored one.
 
@@ -112,17 +112,17 @@ The spring cache abstraction allows to use different cache implementations:
 * [Memcached](https://memcached.org/) (yet another distributed cache)
 * No cache, but be aware that when using an SQL database, this will disable the Hibernate 2nd level cache.
 
-We are going with **ehcache** for our BugTracker.
+Let's take **ehcache** for our BugTracker.
 
-Also, this can have a very positive impact on your application's performance, and hence it is a recommended option.
+Also, this can have a very positive impact on your application's performance. Hence, it is a recommended option. 
 
 ## Generating your application (4/6)
 
 10. Do you want to use Hibernate 2nd level cache?
 
-This option will only be available if you selected to use an SQL database (as JHipster will use Spring Data JPA to access it) and selected a cache provider in the previous question.
+This option will only be available if you chose an SQL database (as JHipster will use Spring Data JPA to access it) and a cache provider in the previous question. 
 
-[Hibernate](http://hibernate.org/) is the JPA provider used by JHipster, and it can use a cache provider to greatly improve its performance. As a result, we highly recommend you use this option, and to tune your cache implementation according to your application's needs: **Yes**.
+[Hibernate](http://hibernate.org/) is the JPA provider used by JHipster, and it can use a cache provider to greatly improve its performance. As a result, we highly recommend you to use this option, and to tune your cache implementation according to your application's needs: **Yes**.
 
 ---
 
@@ -137,7 +137,7 @@ For this one, let's go with **Maven**.
 
 12. Which other technologies would you like to use?
 
-This is a multi-select ansswer, to add one or several other technologies to the application.
+This is a multiple choice answers, to add one or several other technologies to the application.
 Here, you have to press `space` to select, `a` to toggle everything and `i` if you want to invert selection. The available technologies are:
 
 * Search engine using Elasticsearch. [Elasticsearch](https://github.com/elastic/elasticsearch) will be configured using Spring Data Elasticsearch, you can find more information on our [ElasticSearch guide](https://www.jhipster.tech/using-elasticsearch/).
@@ -154,7 +154,7 @@ In our case, we'd like to keep it as simple as possible so we are not going to c
 * [Angular](https://angular.io/)
 * [React](https://reactjs.org/)
 
-Because we have to choose, take **Angular**
+Because we have to choose, let's take **Angular**
 
 ---
 
@@ -162,13 +162,13 @@ Because we have to choose, take **Angular**
 
 [Sass](https://sass-lang.com) is a great solution to simplify designing CSS. To be used efficiently, you will need to run a [Webpack](https://webpack.js.org) dev server, which will be configured automatically.
 
-Don't worry, even if you don't know about _SASS_, we'll keep it simple enough so that anyone can understand ! Go with **Yes**.
+Don't worry, even if you don't know anything about _SASS_, we'll keep it simple enough so that anyone can understand ! Go with **Yes**.
 
 ---
 
 15. Would you like to enable internationalization support?
 
-By default JHipster provides excellent internationalization support, both on the client side and on the server side. However, internationalization adds a little overhead, and is a little bit more complex to manage, so you can choose not to install this feature.
+By default JHipster provides an excellent internationalization support,  both on the client side and on the server side. However, internationalization adds a little overhead, and is a little bit more complex to manage, so you can choose not to install this feature.
 
 Please note that JHipster covers only UI internationalization. For data internationalization, you will need to code it yourself in JPA/Hibernate layer.
 
@@ -184,7 +184,7 @@ This is the main language of your application: you are free to choose anything b
 
 17. Please choose additional languages to install.
 
-Like earlier, this is a mutliple-answer question so the commands are the same. But then again, let's say we will support **French** language in BugTracker.
+Like earlier, this is a multiple-choice question so the commands are the same. But then again, let's say we will support **French** language in BugTracker.
 
 ---
 
