@@ -13,6 +13,7 @@ To run JHipster, you will need the following technologies.
   
 Note that the following ones are already installed in this Cloud Shell:  
 1. Java 8 from [the Oracle website](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+JHipster 5.8.1 is using Java 8 and is not compatible with other versions, JHipster 6 will be updated with Java 11.
 2. Node.js from [the Node.js website](https://nodejs.org/) (please use a LTS 64-bit version, non-LTS versions are not supported)
 
 From here, please do follow the steps even if you are using google shell cloud.
@@ -39,6 +40,8 @@ Start by creating a folder that will contain your future application, in our cas
 ```bash
 mkdir ~/BugTrackerJHipster
 ```
+
+If you're running these tutorials locally, we recommend you to use your usual workspace (and therefore not use the absolute path to create and access your application folder).
 
 If you're using Google Cloud Shell, please do set up your git like so : 
 
