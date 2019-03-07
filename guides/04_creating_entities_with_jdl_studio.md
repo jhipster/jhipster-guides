@@ -124,7 +124,7 @@ Validation will be automatically generated on:
 * the HTML views, using the Angular or React validation mechanism
 * the Java domain objects, using [Bean Validation](http://beanvalidation.org/)
 
-Bean validation will then bne used to automatically validate domain objects when they are used in:
+Bean validation will then be used to automatically validate domain objects when they are used in:
 
 * Spring MVC/REST controllers (using the `@Valid` annotation)
 * Hibernate/JPA (entities are automatically validated before being saved)
