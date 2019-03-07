@@ -6,6 +6,7 @@ Setting up Continuous Integration (CI) for a JHipster application is harder than
 of the complexity associated with maintaining a build composed of 2 software stacks:
 * the Java back-end code with Maven or Gradle
 * the JavaScript front-end with NodeJS, NPM or Yarn
+
 Each stack comes with its own dependency management (Maven artifacts, NPM packages) with potential conflicts to solve.
 
 JHipster should support the following CI systems out of the box:
@@ -20,7 +21,7 @@ In this tutorial we will focus on **Travis CI**.
 
 ## Generate the configuration file
 
-To generate these config files, run this command in you projet folder:
+To generate these config files, run the following command in your projet folder:
 ```bash
 jhipster ci-cd
 ```
@@ -67,7 +68,8 @@ git remote add origin https://github.com/YOUR_GITHUB/BugTrackerJHipster
 
 Now commit the file generated with the sub-generator for continuous integration:
 ```bash
-git add .;git commit -m "initial commit"
+git add .
+git commit -m "initial commit"
 ```
 
 You can now push all the changes in the remote repository with the following command:
@@ -76,24 +78,24 @@ git push --set-upstream origin master
 ```
 
 ## Travis CI
-Travis CI is a service use to build and test software hosted on GitHub, when activated on a particular 
+Travis CI is a service to build and test software hosted on GitHub. When activated on a particular 
 repository, any push or pull request will trigger the build and tests using the <walkthrough-editor-open-file filePath="BugTrackerJHipster/.travis.yml">configuration file.</walkthrough-editor-open-file>
-This is what we are going to do for the BugTracker projet.
+This is what we are going to do for the BugTracker project.
 
-1. Signin on [Travis CI website](https://travis-ci.org/) with your GitHub account
+1. Signin to [Travis CI website](https://travis-ci.org/) with your GitHub account
 
 2. Go to your [repository list](https://travis-ci.org/account/repositories)
 
-3. Activate Travis CI for BugTrackerJHipster repository
+3. Activate Travis CI for the BugTrackerJHipster repository
 
-Travis CI is now installed on BugTracker repository, you can try to commit and push a change.
-You will see [Travis](https://travis-ci.org/) running the tests.
+Travis CI is now installed on your BugTracker repository. You can commit and push a change to see 
+ [Travis](https://travis-ci.org/) build and run the tests.
 
 ---
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
-Congratulations! You setted up the continuous integration on your project.
+Congratulations! You just set up the continuous integration for your project.
 
 Enter the next command line to start the next tutorial:
 
