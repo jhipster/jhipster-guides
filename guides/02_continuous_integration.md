@@ -82,7 +82,7 @@ Travis CI is a service to build and test software hosted on GitHub. When activat
 repository, any push or pull request will trigger the build and tests using the <walkthrough-editor-open-file filePath="BugTrackerJHipster/.travis.yml">configuration file.</walkthrough-editor-open-file>
 This is what we are going to do for the BugTracker project.
 
-1. Signin to [Travis CI website](https://travis-ci.org/) with your GitHub account
+1. Sign in to [Travis CI website](https://travis-ci.org/) with your GitHub account
 
 2. Go to your [repository list](https://travis-ci.org/account/repositories)
 
