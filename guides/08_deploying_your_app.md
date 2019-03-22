@@ -17,20 +17,20 @@ Next we will deploy our application using Docker, however if you want to build a
 
 ## Deploying with docker
 JHipster provides a complete Docker support, in order to:
-* Facilitate development, as you can start a full infrastructure very easily, even when using a complex microservices architecture
-* For people using Docker Swarm, deploying to production directly, as it uses the same Docker Compose configuration  
+* Facilitate development, as you can start a full infrastructure very easily, even when using a complex microservice architecture
+* Deploy directly in production if you use Docker Swarm, as it uses the same Docker Compose configuration  
 
-One great feature of using Docker Compose is that you can easily scale your containers, using the docker-compose scale command. This is very interesting if you use JHipster with a a microservices architecture.  
+One great feature of using Docker Compose is that you can easily scale your containers, using the docker-compose scale command. This is very interesting if you use JHipster with a microservice architecture.  
 
 When generating your application, JHipster generates for you:  
 
 * A Dockerfile for building a Docker image and running your application inside a container  
 * Several Docker Compose configurations to help you run your application with third-party services, for example a database  
 
-Those files are located inside folder src/main/docker/.
+Those files are located in the folder src/main/docker/.
 
 ### Prerequisites
-You have to install Docker and Docker Compose:
+You have to install :
 * Docker
 * Docker Compose  
 Luckily, you do not need to install it with Google Cloud Shell.
@@ -40,7 +40,7 @@ To create a Docker image of your application, and push it into your Docker regis
 ```bash
 ./mvnw package -Pprod verify jib:dockerBuild
 ```
-This process takes some times to complete (about 15 minutes with the boost mode on).
+This process takes some time to complete (about 15 minutes with the boost mode on).
 
 
 To run this image, use the Docker Compose configuration located in the src/main/docker folder of your application:
