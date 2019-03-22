@@ -228,7 +228,7 @@ export class MyticketsComponent implements OnInit {
 ```
 
 ## Adding our new component (3/3)
-Now, let's add the new component to the navigation bar so the user can access it.
+Now, let's add the new component to the navigation bar so the users can access it.
 
 1. Open <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/webapp/app/layouts/navbar/navbar.component.html">navbar.component.html</walkthrough-editor-open-file>.
 

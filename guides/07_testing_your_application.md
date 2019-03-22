@@ -46,7 +46,7 @@ In our case and especially if you are using Google Cloud Shell, run the command 
 ./mvnw clean test
 ```
 
-**Limitations:** if the generated entities have some validations, JHipster will not be able to generate the correct values depending on the validation rules because the rules can be complex (i.e. regex pattern). In this case, the tests will fail and you will have to change the values manually to pass the validation rules.
+**Limitations:** if the generated entities have some validations, JHipster will not be able to generate the correct values depending on the validation rules because the rules can be complex (i.e. regex pattern). In this case, the tests will fail and you will have to change the values manually to make the tests pass.
 
 Note that the Behaviour-driven development (BDD) is available using [Cucumber](https://cucumber.io/), with its [JVM implementation](https://github.com/cucumber/cucumber-jvm).
 [Gherkin](https://docs.cucumber.io/gherkin/reference/) features will have to be written in your `src/test/features` directory.
