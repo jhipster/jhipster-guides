@@ -20,7 +20,7 @@ Click on the Next button at the bottom right of this window to know how to gener
 
 ## Generating your application (1/6)
 
-_Some questions change depending on the previous choices you have made. For example, you won't need to configure an Hibernate cache if you didn't select an SQL database_
+_Some questions change depending on the previous choices you have made. For example, you won't need to configure an Hibernate cache if you didn't select a SQL database_
 
 ---
 
@@ -66,7 +66,7 @@ Choose **Yes** at this question.
 6. Which _type_ of database would you like to use?
 
 You can choose between:
-* An SQL database (H2, MySQL, MariaDB, PostgreSQL, MSSQL, Oracle), which you will access with Spring Data JPA
+* a SQL database (H2, MySQL, MariaDB, PostgreSQL, MSSQL, Oracle), which you will access with Spring Data JPA
 * [MongoDB](https://www.jhipster.tech/using-mongodb/)
 * [Cassandra](https://www.jhipster.tech/using-cassandra/)
 * [Couchbase](https://www.jhipster.tech/using-couchbase/)
@@ -110,7 +110,7 @@ The spring cache abstraction allows to use different cache implementations:
 * [Hazelcast](http://www.hazelcast.com/) (distributed cache)
 * [Infinispan](http://infinispan.org/) (another distributed cache).
 * [Memcached](https://memcached.org/) (yet another distributed cache)
-* No cache, but be aware that when using an SQL database, this will disable the Hibernate 2nd level cache.
+* No cache, but be aware that when using a SQL database, this will disable the Hibernate 2nd level cache.
 
 Let's take **ehcache** for our BugTracker.
 
@@ -120,7 +120,7 @@ Also, this can have a very positive impact on your application's performance. He
 
 10. Do you want to use Hibernate 2nd level cache?
 
-This option will only be available if you chose an SQL database (as JHipster will use Spring Data JPA to access it) and a cache provider in the previous question. 
+This option will only be available if you chose a SQL database (as JHipster will use Spring Data JPA to access it) and a cache provider in the previous question. 
 
 [Hibernate](http://hibernate.org/) is the JPA provider used by JHipster, and it can use a cache provider to greatly improve its performance. As a result, we highly recommend you to use this option, and to tune your cache implementation according to your application's needs: **Yes**.
 

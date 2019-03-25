@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Hipster comes with an extensive set of tests, and each generated application has:
+JHipster comes with an extensive set of tests, and each generated application has:
 
 *   Integration tests using the Spring Test Context framework.
 *   UI tests with [Jest](https://facebook.github.io/jest/).
@@ -18,21 +18,21 @@ Optionally, JHipster can also generate:
 
 We have two goals in generating those tests:
 
-*   Help every JHipster user to follow best practices, as we believe tests are a very useful part of every application
-*   Validate that what is being generated is correct. So even if you don't plan to use those tests at all, doing just a `./mvnw clean test` and `npm test` after generating your application is a good way of knowing if everything is fine. You are then free to ignore those tests if you think that testing is a waste of time!
+*   Help every JHipster user follow best practices, as we believe tests are a very important part of an application
+*   Validate that what is being generated is correct. So even if you don't plan to use those tests at all, doing just a `./mvnw clean test` and `npm test` after generating your application is a good way to know if everything is fine. You are then free to ignore them if you think that testing is a waste of time!
 
-All those tests will be generated in the standard Maven `src/test` folder.
+All those tests will be generated in the standard Maven folder `src/test`.
 
 ## Integration tests
 
-Integration tests are done with the Spring Test Context framework, and are located in the `src/test/java` folder. JHipster will launch a specific Spring test context, which will be re-used along all tests, as:
+Integration tests are done with the Spring Test Context framework, and are located in the folder `src/test/java`. JHipster will launch a specific Spring test context, which will be re-used along all tests, as:
 
 *   Your Spring beans should be stateless and thread-safe, and thus can be re-used across your different tests suites.
-*   Launching just one Spring context for all tests if a lot faster than launching a new Spring context for each test.
+*   Launching just one Spring context for all the tests if a lot faster than launching a new Spring context for each test.
 
-This Spring test context will use a specific test database to execute its tests:
+This Spring test context will use a specific test database for the execution of the tests:
 
-*   If you use an SQL database, JHipster will launch an in-memory H2 instance in order to use a temporary database for its integration tests. Liquibase will be run automatically, and will generate the database schema.
+*   If you use a SQL database, JHipster will launch an in-memory H2 instance in order to use a temporary database for its integration tests. Liquibase will be run automatically, and will generate the database schema.
 *   If you use Cassandra, JHipster will launch an in-memory Cassandra instance using [CassandraUnit](https://github.com/jsevellec/cassandra-unit).
 *   If you use MongoDB, JHipster will launch an in-memory MongoDB instance using [de.flapdoodle.embed.mongo](https://github.com/flapdoodle-oss/de.flapdoodle.embed.mongo).
 *   If you use Elasticsearch, JHipster will launch an in-memory Elasticsearch instance using Spring Data Elasticsearch.
@@ -46,7 +46,7 @@ In our case and especially if you are using Google Cloud Shell, run the command 
 ./mvnw clean test
 ```
 
-**Limitations:** if the generated entities have validation enabled, JHipster is not enable to generate the correct values depending on the validation rules. Those rules can be so complex, for example if a Regex pattern is used, that this just not possible. In this case, the tests will fail validation, and the default values used in the test will need to changed manually, so they can pass the validation rules.
+**Limitations:** if the generated entities have some validations, JHipster will not be able to generate the correct values depending on the validation rules because the rules can be complex (i.e. regex pattern). In this case, the tests will fail and you will have to change the values manually to make the tests pass.
 
 Note that the Behaviour-driven development (BDD) is available using [Cucumber](https://cucumber.io/), with its [JVM implementation](https://github.com/cucumber/cucumber-jvm).
 [Gherkin](https://docs.cucumber.io/gherkin/reference/) features will have to be written in your `src/test/features` directory.
@@ -55,7 +55,7 @@ That means Cucumber, being a JUnit extension, will be ran along your `./mvnw cle
 
 ## Performance tests
 
-Performance tests are done with [Gatling](http://gatling.io/), and are located in the `src/test/gatling` folder. They are generated for each entity, and allows to test each of them with a lot of concurrent user requests.
+Performance tests are done with [Gatling](http://gatling.io/), and are located in the folder `src/test/gatling`. They are generated for each entity, and allows to test each of them with a lot of concurrent user requests.
 
 To run Gatling tests, you must first install Gatling: please go to the [Gatling download page](https://gatling.io/download/) and follow the instructions there. Please note we do not allow to run Gatling from Maven or Gradle, as it causes some classpath issues with other plugins (mainly because of the use of Scala).
 
@@ -101,12 +101,12 @@ UI tests come in two flavors with JHipster: unit tests with Jest, and integratio
 
 ### Jest
 
-UI unit tests are located in the `src/test/javascript/spec` folder. They use [Jest](https://facebook.github.io/jest/).
+UI unit tests are located in the folder `src/test/javascript/spec`. They use [Jest](https://facebook.github.io/jest/).
 
 Those tests will mock up the access to the application's REST endpoints, so you can test your UI layer without having to launch the Java back-end.
 
 *   Those tests can be run using `npm test`.
-*   Tip: if you want to focus on a single test change the module description from `describe('...', function() {` to `fdescribe('...', function() {` and Jest will run this test only.
+*   Tip: if you want to focus on a single test then change the module description from `describe('...', function() {` to `fdescribe('...', function() {` and Jest will run this test only.
 
 ```bash
 cd ~/BugTrackerJHipster;npm test
@@ -114,13 +114,13 @@ cd ~/BugTrackerJHipster;npm test
 
 ### Protractor
 
-UI integration tests are done with [Protractor](https://angular.github.io/protractor/#/), and are located in the `src/test/javascript/e2e` folder.
+UI integration tests are done with [Protractor](https://angular.github.io/protractor/#/), and are located in the folder `src/test/javascript/e2e`.
 
 Those tests will launch a Web browser and use the application like a real user would do, so you need to have a real application running, with its database set-up.
 
 Those tests can be run using `npm run e2e`.
 
-Please note that Protractor test needs a browser to run the protractor tests. If you are using Google Cloud Shell, you will not be able to run Protractor test. If you've set up a repository for your project, you can run them locally after cloning it on your computer.
+Please note that Protractor test needs a browser to run the protractor tests. If you are using Google Cloud Shell, you will not be able to run Protractor test. If you have set up a repository for your project, you can run them locally after cloning it on your computer.
 
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>

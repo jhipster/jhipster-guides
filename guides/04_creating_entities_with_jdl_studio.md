@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Now that your application is up and running, you will want to create _entities_. In your case, you might want to create entities for our BugTracker, for that you will need:
+Now that your application is up and running, you will soon need to create _entities_, and so you will need:
 
 * A database table
 * A Liquibase change set
@@ -17,18 +17,18 @@ Now that your application is up and running, you will want to create _entities_.
 * Integration tests to validate everything works as expected
 * Performance tests, to see if everything works smoothly
 
-If you have several entities, you will likely want to have relationships between them. For This, you will need:
+If you have several entities, you will likely want to have relationships between them. For this, you will need:
 
 * A database foreign key
-* Specific JavaScript and HTML code for managing this relationship
+* Specific JavaScript and HTML code to manage this relationship
 
-The "entity" sub-generator will create all the necessary files, and provide a CRUD front-end for each entity (see [Angular project structure](https://www.jhipster.tech/using-angular/)).
+Thankfully, the "entity" sub-generator will help you create all the required files, and provide a CRUD front-end for each entity (see [Angular project structure](https://www.jhipster.tech/using-angular/)).
 
 ## JDL Studio
 
-If you want to create many entities, which is your case, you might prefer to use a graphical tool. In that case, we advise you to use [JDL Studio](https://start.jhipster.tech/jdl-studio/), our online tool to create entities and relationships using our domain-specific language [JDL](https://www.jhipster.tech/jdl/).
+You can use a graphical tool to create your entities. In this case, we advise you to use [JDL Studio](https://start.jhipster.tech/jdl-studio/), our online tool to create entities and relationships using our domain-specific language [JDL](https://www.jhipster.tech/jdl/).
 
-After clicking on the first link, an internet page will open: that is our JDL Studio. This is where you will create your entities.
+After clicking on the first link, the JDL Studio opens on a window. You can now start writing your first entity.
 
 The entity declaration is done as follows:
 
@@ -43,7 +43,7 @@ entity <entity name> {
 * `<type>` the JHipster supported type of the field,
 * and as an option `<validation>` the validations for the field
 
-The possible types and validations are those described [here](https://www.jhipster.tech/jdl/?hl=fr#annexes), if the validation requires a value, simply add `(<value>)` right after the name of the validation.
+The possible types and validations are those described [here](https://www.jhipster.tech/jdl/?hl=fr#annexes). If the validation requires a value, simply add `(<value>)` right after the name of the validation.
 
 Here's an example of a JDL code:
 
@@ -66,11 +66,11 @@ entity A {
 }
 ```
 
-Because the JDL was made to be simple to use and read, if your entity is empty (no field), you can just declare an entity with `entity A` or `entity A {}`.
+Because the JDL was made to be simple to use and read, if your entity is empty (no field), you can just declare an entity with `entity A` instead of `entity A {}`.
 
 Note that JHipster adds a default `id` field so that you needn't worry about it.
 
-In the JDL Studio, declare the next entities:
+In the JDL Studio, declare the following entities:
 
 **Project**
 
@@ -91,15 +91,14 @@ If you've declared them properly, you should see the graphical tool updating its
 To know more about entity fields, click on the Next button down there.
 
 ## Entity fields and field types
+For each entity, you can add as many fields as you want. You will need to add their name and type and JHipster will generate for you all the required code and configuration, from the Angular HTML view to the Liquibase changelog.
 
-For each entity, you can add as many fields as you want. You will need to input the field names and their types and JHipster will generate for you all the required code and configuration, from the Angular HTML view to the Liquibase changelog.
-
-Those fields cannot contain reserved keywords in the technologies you are using. For example, if you use MySQL:
+Those fields cannot contain reserved keywords in the technologies you are using. For example, if you use a MySQL database :
 
 * You cannot use Java reserved keywords (as your code will not compile)
 * You cannot use MySQL reserved keywords (as your database schema update will fail)
 
-JHipster support many field types. This support depends on your database backend, so we use Java types to describes them; a Java `String` will be stored differently in Oracle or Cassandra, and it is one of JHipster's strengths to generate database access code for you.
+JHipster supports many field types. This support depends on your database backend, so we use Java types to describe them; a Java `String` will be stored differently in Oracle or Cassandra, and it is one of JHipster's strengths to generate database access code for you.
 
 * `String`: A Java String. Its default size depends on the underlying backend (if you use JPA, it's 255 by default), but you can change it using the validation rules (putting a `max` size of 1024, for example).
 * `Integer`: A Java Integer.
@@ -176,8 +175,8 @@ relationship ManyToOne {
 We just declared that:
 
 * A ticket can have many labels attached to it and labels can be attached to many tickets
-* A ticket is attached to a single Project but a Project can be attached to many tickets
-* A ticket is assigned to a single User, refered by his login, but a User can be attached to many tickets
+* A ticket is attached to a single project but a project can be attached to many tickets
+* A ticket is assigned to a single user, referred to as his login, but a user can be attached to many tickets
 
 Finally, let's add a pagination for our tickets, add this to your file:
 
@@ -193,7 +192,7 @@ If you look in the `res` folder, you will see a file named <walkthrough-editor-o
 
 ## Importing the .jh file
 
-After creating the .jh file, you can now generate entities from the JDL file using the `import-jdl` sub-generator, by running `bash jhipster import-jdl your-jdl-file.jh`
+After creating the .jh file, you can now generate entities from the JDL file using the `import-jdl` sub-generator, by running `jhipster import-jdl your-jdl-file.jh`
 
 Go to your project directory and type:
 
@@ -207,7 +206,7 @@ Run the generated test suite, with
 mvn test
 ```
 
-Launch the application (for example with `mvn`), log in and click on "Entities" in the menu. You should see the entities that you've created before in the JDL Studio.
+Launch the application (for example with `mvn`), log in and click on "Entities" in the menu. You should see the entities you have created with the JDL Studio.
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 

@@ -8,23 +8,27 @@ In this guide, we will make our own Angular component in order to display the lo
 
 ## Tooling
 
-Angular is using TypeScript instead of JavaScript, and as a result some specific tooling is necessary
-to work efficiently with it. Our development workflow for an Angular 2+ application is as below.
+Angular is using TypeScript instead of JavaScript, and as a result a specific tooling is necessary to work efficiently with it. Our development workflow for an Angular application is as below:
 
-1. When you generate an application, the files are created and at the end of generation npm install task is triggered.
-2. Once npm install is complete it calls the postInstall script in package.json, this step triggers the webpack:build task.
-3. Now you should have all files generated and compiled into the www folder inside the target or build folder based on the build tool (Maven or Gradle) selected.
-4. Now run **./mvnw** to launch the application server and it should be available at localhost:8080 this also serves the client side code compiled from the above steps.
+1. When you generate an application, the files are created and then the command **npm install** is executed.
+2. Once the previous command is completed, the script postinstall in package.json is executed triggering the task webpack:build.
+3. Now you should have all the files generated and compiled into the folder www inside the target or build folder based on the build tool (Maven or Gradle) selected.
+4. Now run **./mvnw** to launch the application server and it should be available at localhost:8080. This will also serve the client side code compiled from the above steps.
 ```bash
 ./mvnw
 ```
-5. Now run **npm start** in a new terminal to launch Webpack dev-server with BrowserSync. This will take care of compiling your TypeScript code, and automatically reloading your browser.
+or on Windows : 
+```bash
+   mvnw.cmd
+```
+
+5. Now run **npm start** in a new terminal to launch the Webpack dev-server with BrowserSync. This will automatically compile your TypeScript code and reload your browser on change.
 ```bash
 npm start
 ```
 6. Click on `walkthrough web-preview-icon` and watch the port **9000**. Now any change on your front end will be reflected here.
 
-If you start making changes to the client side code without having **npm start** running, nothing will be reflected as the changes are not compiled so you need to either run npm run webpack:build manually after changes or have npm start running.  
+If you start making changes to the client side code without having **npm start** running, nothing will be reflected as the changes are not compiled. So you need to either run **npm run webpack:build** manually after changes or have **npm start** running.  
 More at the [JHipster website](https://www.jhipster.tech/using-angular/).
 
 ## Updating the service
@@ -48,16 +52,16 @@ Calling `queryMyTickets()` will send a HTTP request to the Rest Controller and w
 the tickets associated to the connected user.
 
 ## Adding our new components (1/3)
-Let's make our Angular component called mytickets.
+Let's create a new Angular component called mytickets.
 
 1. Install the command-line interface tool Angular CLI
 ```bash
 npm install -g @angular/cli
 ```
 
-2. Go to the Angular root project
+2. Be sure to be inside the JHipster project
 ```bash
-cd ~/BugTrackerJHipster/src/main/webapp/app
+cd ~/BugTrackerJHipster
 ```
 
 3. Generate the new component mytickets
@@ -65,9 +69,9 @@ cd ~/BugTrackerJHipster/src/main/webapp/app
 ng generate component mytickets
 ```
 
-4. Go to the generated component
+4. Go to the generated component which should be located in the following folder src/main/webapp/app/
 ```bash
-cd mytickets
+cd src/main/webapp/app/mytickets
 ```
 
 5. Replace <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/webapp/app/mytickets/mytickets.component.html">mytickets.component.html</walkthrough-editor-open-file> with the following content.
@@ -224,7 +228,7 @@ export class MyticketsComponent implements OnInit {
 ```
 
 ## Adding our new component (3/3)
-Now, let's add the new component to the navigation bar, in order to let user to access it.
+Now, let's add the new component to the navigation bar so the users can access it.
 
 1. Open <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/webapp/app/layouts/navbar/navbar.component.html">navbar.component.html</walkthrough-editor-open-file>.
 
@@ -297,11 +301,11 @@ Let's check our new component.
 "MyTickets".
 
 2. Click on MyTickets and there you have your component !
-However this should be empty since we have not created any entities.
+However this should be empty since we have not yet created any entities.
 
-3. Create a Project and 2 tickets: one assigned to the Administrator and one for an User.
+3. Create a Project and 2 Tickets: one assigned to the Administrator and one to the User.
 
-4. Click on MyTickets, you should see only one ticket assigned to the Administrator.
+4. Click on MyTickets, you should then see the ticket assigned to the Administrator.
 
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>

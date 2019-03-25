@@ -12,9 +12,9 @@ First, head to the <walkthrough-editor-open-file filePath="BugTrackerJHipster/sr
 Page<Ticket> findAllByOrderByDueDateAsc(Pageable pageable);
 ```
 
-[Spring Data JPA](https://spring.io/projects/spring-data-jpa) will deduce its associated query by parsing the method name, that means you do not have to implement anything else.
+[Spring Data JPA](https://spring.io/projects/spring-data-jpa) will deduce its associated query by parsing the method name, so that you do not have to implement anything else.
 
-Now, head to the <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/java/com/mycompany/bugtracker/web/rest/TicketResource.java" text="TicketResource.java"></walkthrough-editor-open-file> file and change the `getAllTickets` function so that it instead uses our new function.
+Now, head to the file <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/java/com/mycompany/bugtracker/web/rest/TicketResource.java" text="TicketResource.java"></walkthrough-editor-open-file> and change the function `getAllTickets` to use our new function instead.
 
 ```Java
 @GetMapping("/tickets")
@@ -36,7 +36,7 @@ If you start your server again, you should see that the tickets are automaticall
 
 ## Assigned tickets
 
-Let's now add up a new API to our server: you want to show your end users only their assigned tickets. For that, let's start with creating a new mapping, add this to the <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/java/com/mycompany/bugtracker/web/rest/TicketResource.java" text="TicketResource.java"></walkthrough-editor-open-file> file:
+Let's now add up a new API to our server: you want to show your end users only their assigned tickets. For that, let's start by creating a new mapping, add this to the file <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/java/com/mycompany/bugtracker/web/rest/TicketResource.java" text="TicketResource.java"></walkthrough-editor-open-file>:
 
 ```Java
 @GetMapping("/tickets/self")
@@ -53,7 +53,7 @@ public ResponseEntity<List<Ticket>> getAllSelfTickets(@ApiParam Pageable pageabl
 }
 ```
 
-If you check in the <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/java/com/mycompany/bugtracker/repository/TicketRepository.java" text="TicketRepository.java"></walkthrough-editor-open-file> file, you will see that the method has been already implemented, that is why this time you didn't to modify anything in that file.
+If you check the file <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/java/com/mycompany/bugtracker/repository/TicketRepository.java" text="TicketRepository.java"></walkthrough-editor-open-file>, you will see that the method has been already implemented, that is why this time you don't need to modify anything.
 
 With the previous code added, we've supplemented our API with a new mapping: to see if the endpoint works as intended, start up your application and log in as an admin.
 
@@ -65,9 +65,9 @@ Show the hidden contents by clicking on it and click on the **Try it out!** butt
 
 Right now, anyone can delete a ticket, even a normal user. We want to ensure that only an admin can delete a ticket.
 
-JHipster is using [Spring Security](https://spring.io/projects/spring-security) to manage authentication and authorization for your application.
+JHipster is using [Spring Security](https://spring.io/projects/spring-security) to manage authentication and authorization in your application.
 
-To ensure that only an admin can delete a ticket, head to the <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/java/com/mycompany/bugtracker/web/rest/TicketResource.java" text="TicketResource.java"></walkthrough-editor-open-file> file again and add the following annotation on the `deleteTicket` method:
+To ensure that only an admin can delete a ticket, head to the file <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/java/com/mycompany/bugtracker/web/rest/TicketResource.java" text="TicketResource.java"></walkthrough-editor-open-file>  again and add the following annotation on the method `deleteTicket`:
 
 ```Java
 @DeleteMapping("/tickets/{id}")
