@@ -22,7 +22,7 @@ If you have several entities, you will likely want to have relationships between
 * A database foreign key
 * Specific JavaScript and HTML code to manage this relationship
 
-Thanksfully, the "entity" sub-generator will help you create all the required files, and provide a CRUD front-end for each entity (see [Angular project structure](https://www.jhipster.tech/using-angular/)).
+Thankfully, the "entity" sub-generator will help you create all the required files, and provide a CRUD front-end for each entity (see [Angular project structure](https://www.jhipster.tech/using-angular/)).
 
 ## JDL Studio
 
@@ -98,7 +98,7 @@ Those fields cannot contain reserved keywords in the technologies you are using.
 * You cannot use Java reserved keywords (as your code will not compile)
 * You cannot use MySQL reserved keywords (as your database schema update will fail)
 
-JHipster support many field types. This support depends on your database backend, so we use Java types to describe them; a Java `String` will be stored differently in Oracle or Cassandra, and it is one of JHipster's strengths to generate database access code for you.
+JHipster supports many field types. This support depends on your database backend, so we use Java types to describe them; a Java `String` will be stored differently in Oracle or Cassandra, and it is one of JHipster's strengths to generate database access code for you.
 
 * `String`: A Java String. Its default size depends on the underlying backend (if you use JPA, it's 255 by default), but you can change it using the validation rules (putting a `max` size of 1024, for example).
 * `Integer`: A Java Integer.
