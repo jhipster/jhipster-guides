@@ -158,11 +158,9 @@ Because we have to choose, let's take **Angular**
 
 ---
 
-14. Would you like to enable _SASS_ stylesheet preprocessor?
+14. Would you like to use a Bootswatch theme (https://bootswatch.com/)?
 
-[Sass](https://sass-lang.com) is a great solution to simplify designing CSS. To be used efficiently, you will need to run a [Webpack](https://webpack.js.org) dev server, which will be configured automatically.
-
-Don't worry, even if you don't know anything about _SASS_, we'll keep it simple enough so that anyone can understand ! Go with **Yes**.
+Here again, we want to keep it simple: let's take **Default JHipster**
 
 ---
 

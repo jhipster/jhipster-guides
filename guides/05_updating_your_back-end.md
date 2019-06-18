@@ -18,7 +18,7 @@ Now, head to the file <walkthrough-editor-open-file filePath="BugTrackerJHipster
 
 ```Java
 @GetMapping("/tickets")
-public ResponseEntity<List<Ticket>> getAllTickets(Pageable pageable, @RequestParam(required = false, defaultValue = "false") boolean eagerload) {
+public ResponseEntity<List<Ticket>> getAllTickets(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder, @RequestParam(required = false, defaultValue = "false") boolean eagerload) {
     log.debug("REST request to get a page of Tickets");
     Page<Ticket> page;
     if (eagerload) {
@@ -27,7 +27,7 @@ public ResponseEntity<List<Ticket>> getAllTickets(Pageable pageable, @RequestPar
         //page = ticketRepository.findAll(pageable);
         page = ticketRepository.findAllByOrderByDueDateAsc(pageable);
     }
-    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, String.format("/api/tickets?eagerload=%b", eagerload));
+    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder.queryParams(queryParams), page);
     return ResponseEntity.ok().headers(headers).body(page.getContent());
 }
 ```
@@ -48,7 +48,7 @@ public ResponseEntity<List<Ticket>> getAllSelfTickets(@ApiParam Pageable pageabl
     } else {
         page = new PageImpl<>(ticketRepository.findByAssignedToIsCurrentUser());
     }
-    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, String.format("/api/tickets/self?eagerload=%b", eagerload));
+    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder.queryParams(queryParams), page);
     return ResponseEntity.ok().headers(headers).body(page.getContent());
 }
 ```
