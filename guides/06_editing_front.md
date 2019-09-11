@@ -156,6 +156,7 @@ cd src/main/webapp/app/mytickets
 ```Typescript
 import { Component, OnInit } from '@angular/core';
 import { ITicket } from 'app/shared/model/ticket.model';
+import { Account } from 'app/core/user/account.model';
 import { Subscription } from 'rxjs';
 import { TicketService } from 'app/entities/ticket';
 import { JhiAlertService, JhiEventManager, JhiParseLinks } from 'ng-jhipster';
