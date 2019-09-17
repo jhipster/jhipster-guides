@@ -42,18 +42,16 @@ Let's now add up a new API to our server: you want to show your end users only t
 @GetMapping("/tickets/self")
 public ResponseEntity<List<Ticket>> getAllSelfTickets(
     Pageable pageable,
-    @RequestParam(required = false) MultiValueMap<String, String> queryParams,
-    UriComponentsBuilder uriBuilder,
     @RequestParam(required = false, defaultValue = "false") boolean eagerload
-){
+) {
     log.debug("REST request to get a page of user's Tickets");
     Page<Ticket> page;
     if (eagerload) {
-        page = ticketRepository.findAllWithEagerRelationships(pageable);
+    page = ticketRepository.findAllWithEagerRelationships(pageable);
     } else {
-        page = new PageImpl<>(ticketRepository.findByAssignedToIsCurrentUser());
+    page = new PageImpl<>(ticketRepository.findByAssignedToIsCurrentUser());
     }
-    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder.queryParams(queryParams), page);
+    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
     return ResponseEntity.ok().headers(headers).body(page.getContent());
 }
 ```
