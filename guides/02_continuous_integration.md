@@ -21,7 +21,7 @@ In this tutorial we will focus on **Travis CI**.
 
 ## Generate the configuration file
 
-To generate these config files, run the following command in your projet folder:
+To generate these config files, run the following command in your project folder:
 ```bash
 jhipster ci-cd
 ```
