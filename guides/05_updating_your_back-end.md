@@ -40,23 +40,15 @@ Let's now add up a new API to our server: you want to show your end users only t
 
 ```Java
 @GetMapping("/tickets/self")
-public ResponseEntity<List<Ticket>> getAllSelfTickets(
-    Pageable pageable,
-    @RequestParam(required = false, defaultValue = "false") boolean eagerload
-) {
-    log.debug("REST request to get a page of user's Tickets");
-    Page<Ticket> page;
-    if (eagerload) {
-    page = ticketRepository.findAllWithEagerRelationships(pageable);
-    } else {
-    page = new PageImpl<>(ticketRepository.findByAssignedToIsCurrentUser());
-    }
+public ResponseEntity<List<Ticket>> getAllSelfTickets() {
+    log.debug("REST request to get all user's Tickets");
+    Page<Ticket> page = new PageImpl<>(ticketRepository.findByAssignedToIsCurrentUser());
     HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
     return ResponseEntity.ok().headers(headers).body(page.getContent());
 }
 ```
 
-If you check the file <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/java/com/mycompany/bugtracker/repository/TicketRepository.java" text="TicketRepository.java"></walkthrough-editor-open-file>, you will see that the method has been already implemented, that is why this time you don't need to modify anything.
+If you check the file <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/java/com/mycompany/bugtracker/repository/TicketRepository.java" text="TicketRepository.java"></walkthrough-editor-open-file>, you will see that the method `findByAssignedToIsCurrentUser` has been already implemented, that is why this time you don't need to modify anything.
 
 With the previous code added, we've supplemented our API with a new mapping: to see if the endpoint works as intended, start up your application and log in as an admin.
 
