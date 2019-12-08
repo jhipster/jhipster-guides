@@ -43,7 +43,7 @@ entity <entity name> {
 * `<type>` the JHipster supported type of the field,
 * and as an option `<validation>` the validations for the field
 
-The possible types and validations are those described [here](https://www.jhipster.tech/jdl/?hl=fr#annexes). If the validation requires a value, simply add `(<value>)` right after the name of the validation.
+The possible types and validations are those described [here](https://www.jhipster.tech/jdl/entities-fields#field-types-and-validations). If the validation requires a value, simply add `(<value>)` right after the name of the validation.
 
 Here's an example of a JDL code:
 
