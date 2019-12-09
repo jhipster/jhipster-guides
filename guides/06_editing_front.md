@@ -158,9 +158,9 @@ import { Component, OnInit } from '@angular/core';
 import { ITicket } from 'app/shared/model/ticket.model';
 import { Account } from 'app/core/user/account.model';
 import { Subscription } from 'rxjs';
-import { TicketService } from 'app/entities/ticket';
+import { TicketService } from 'app/entities/ticket/ticket.service';
 import { JhiAlertService, JhiEventManager, JhiParseLinks } from 'ng-jhipster';
-import { AccountService } from 'app/core';
+import { AccountService } from 'app/core/auth/account.service';
 import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 @Component({
@@ -188,9 +188,9 @@ export class MyticketsComponent implements OnInit {
 
     ngOnInit() {
         this.loadSelf();
-        this.accountService.identity().then((account: Account) => {
+         this.accountService.identity().subscribe((account: Account) => {
             this.account = account;
-        });
+          });
         this.registerChangeInTickets();
     }
 
