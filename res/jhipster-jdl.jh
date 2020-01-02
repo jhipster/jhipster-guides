@@ -7,9 +7,9 @@ entity Label {
 }
 
 entity Ticket {
-	title String required,
-	description String,
-	dueDate LocalDate,
+	title String required
+	description String
+	dueDate LocalDate
 	done Boolean
 }
 
@@ -19,7 +19,7 @@ relationship ManyToMany {
 
 relationship ManyToOne {
 	Ticket{project(name)} to Project,
-	Ticket{assignedTo(login)} to User{ticket}
+	Ticket{assignedTo(login)} to User
 }
 
 paginate Ticket with pagination
