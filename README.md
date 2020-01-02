@@ -7,7 +7,7 @@ Click the button to run the tutorial:
 
 [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/jhipster/jhipster-guides&tutorial=guides/00_setting_up_your_environment.md)
 
-**Please note that clicking this button will open the Google Cloud Shell in a new tab, clone the repository tutorials and start the tutorial n°0**
+**Please note that clicking this button will open the Google Cloud Shell in a new tab, clone the repository tutorials and start the tutorial.**
 
 We highly recommend you to follow the tutorial in the right order. By following these tutorials, you will create an application named BugTrackerJHipster that is inspired from the famous Ticket Issue system from GitHub.
 
