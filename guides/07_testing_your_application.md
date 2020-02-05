@@ -130,5 +130,5 @@ Congratulations! You now know how to test your application !
 Enter the next command line to start the next tutorial:
 
 ```bash
-cloudshell launch-tutorial -d ~/jhipster-guides/guides/08_deploying_your_app.md;
+cloudshell launch-tutorial -d ~/cloudshell_open/jhipster-guides/guides/08_deploying_your_app.md;
 ```

@@ -215,5 +215,5 @@ Congratulations! You now know how to create entities !
 Enter the next command line to start the next tutorial:
 
 ```bash
-cloudshell launch-tutorial -d ~/jhipster-guides/guides/05_updating_your_back-end.md;
+cloudshell launch-tutorial -d ~/cloudshell_open/jhipster-guides/guides/05_updating_your_back-end.md;
 ```

@@ -98,5 +98,5 @@ Congratulations ! You managed to create a new mapping for your server and improv
 Enter the next command line to start the next tutorial:
 
 ```bash
-cloudshell launch-tutorial -d ~/jhipster-guides/guides/06_editing_front.md;
+cloudshell launch-tutorial -d ~/cloudshell_open/jhipster-guides/guides/06_editing_front.md;
 ```
