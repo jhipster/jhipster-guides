@@ -187,8 +187,8 @@ export class MyticketsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadSelf();
-    this.accountService.identity().subscribe((account)  => {
-      this.account= account ;
+    this.accountService.identity().subscribe((account) => {
+      this.account = account;
     });
     this.registerChangeInTickets();
   }
