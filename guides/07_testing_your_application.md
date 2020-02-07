@@ -76,7 +76,7 @@ For running Gatling tests on a microservice application, you have to:
 In this tutorial, we've given you an installation script for Gatling.
 Run the following command to install it:
 ```bash
-~/jhipster-guides/utils/install-gatling.sh
+~/cloudshell_open/jhipster-guides/utils/install-gatling.sh
 ```
 
 To run the Gatling test, head to:
@@ -88,7 +88,7 @@ cd ~/BugTrackerJHipster/src/test/gatling
 and run:
 
 ```bash
-~/jhipster-guides/gatling/bin/gatling.sh
+~/cloudshell_open/jhipster-guides/gatling/bin/gatling.sh
 ```
 
 Let's stress test our Project API, so choose **1**. You don't especially need to give a simulation id nor a description so you can just skip these parts.
