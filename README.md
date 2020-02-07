@@ -5,7 +5,7 @@ All you need is a Google account and access to https://console.cloud.google.com 
 
 Click the button to run the tutorial:
 
-[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/seraphinandrieux/jhipster-guides&tutorial=guides/00_setting_up_your_environment.md)
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/jhipster/jhipster-guides&tutorial=guides/00_setting_up_your_environment.md)
 
 **Please note that clicking this button will open the Google Cloud Shell in a new tab, clone the repository tutorials and start the tutorial.**
 
