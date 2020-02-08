@@ -18,18 +18,18 @@ Now, head to the file <walkthrough-editor-open-file filePath="BugTrackerJHipster
 
 ```Java
 @GetMapping("/tickets")
-public ResponseEntity<List<Ticket>> getAllTickets(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder, @RequestParam(required = false, defaultValue = "false") boolean eagerload) {
-    log.debug("REST request to get a page of Tickets");
-    Page<Ticket> page;
-    if (eagerload) {
-        page = ticketRepository.findAllWithEagerRelationships(pageable);
-    } else {
-        //page = ticketRepository.findAll(pageable);
-        page = ticketRepository.findAllByOrderByDueDateAsc(pageable);
+    public ResponseEntity<List<Ticket>> getAllTickets(Pageable pageable, @RequestParam(required = false, defaultValue = "false") boolean eagerload) {
+        log.debug("REST request to get a page of Tickets");
+        Page<Ticket> page;
+        if (eagerload) {
+            page = ticketRepository.findAllWithEagerRelationships(pageable);
+        } else {
+            //page = ticketRepository.findAll(pageable);
+            page = ticketRepository.findAllByOrderByDueDateAsc(pageable);
+        }
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
-    HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder.queryParams(queryParams), page);
-    return ResponseEntity.ok().headers(headers).body(page.getContent());
-}
 ```
 
 If you start your server again, you should see that the tickets are automatically ordered by the due date.
@@ -54,6 +54,12 @@ public ResponseEntity<List<Ticket>> getAllSelfTickets(
     HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
     return ResponseEntity.ok().headers(headers).body(page.getContent());
 }
+```
+
+Don't forget to add the import:
+
+```Java
+import org.springframework.data.domain.PageImpl;
 ```
 
 If you check the file <walkthrough-editor-open-file filePath="BugTrackerJHipster/src/main/java/com/mycompany/bugtracker/repository/TicketRepository.java" text="TicketRepository.java"></walkthrough-editor-open-file>, you will see that the method has been already implemented, that is why this time you don't need to modify anything.
@@ -98,5 +104,5 @@ Congratulations ! You managed to create a new mapping for your server and improv
 Enter the next command line to start the next tutorial:
 
 ```bash
-cloudshell launch-tutorial -d ~/jhipster-guides/guides/06_editing_front.md;
+cloudshell launch-tutorial -d ~/cloudshell_open/jhipster-guides/guides/06_editing_front.md;
 ```

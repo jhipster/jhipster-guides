@@ -100,5 +100,5 @@ Congratulations! You just set up the continuous integration for your project.
 Enter the next command line to start the next tutorial:
 
 ```bash
-cloudshell launch-tutorial -d ~/jhipster-guides/guides/03_jhipster_app.md;
+cloudshell launch-tutorial -d ~/cloudshell_open/jhipster-guides/guides/03_jhipster_app.md;
 ```

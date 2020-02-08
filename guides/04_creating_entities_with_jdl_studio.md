@@ -197,7 +197,7 @@ After creating the .jh file, you can now generate entities from the JDL file usi
 Go to your project directory and type:
 
 ```bash
-jhipster import-jdl ~/jhipster-guides/res/jhipster-jdl.jh
+jhipster import-jdl ~/cloudshell_open/jhipster-guides/res/jhipster-jdl.jh
 ```
 
 Run the generated test suite, with 
@@ -215,5 +215,5 @@ Congratulations! You now know how to create entities !
 Enter the next command line to start the next tutorial:
 
 ```bash
-cloudshell launch-tutorial -d ~/jhipster-guides/guides/05_updating_your_back-end.md;
+cloudshell launch-tutorial -d ~/cloudshell_open/jhipster-guides/guides/05_updating_your_back-end.md;
 ```

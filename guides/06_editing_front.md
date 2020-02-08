@@ -158,72 +158,74 @@ import { Component, OnInit } from '@angular/core';
 import { ITicket } from 'app/shared/model/ticket.model';
 import { Account } from 'app/core/user/account.model';
 import { Subscription } from 'rxjs';
-import { TicketService } from 'app/entities/ticket';
+import { TicketService } from 'app/entities/ticket/ticket.service';
 import { JhiAlertService, JhiEventManager, JhiParseLinks } from 'ng-jhipster';
-import { AccountService } from 'app/core';
+import { AccountService } from 'app/core/auth/account.service';
 import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 @Component({
-    selector: 'jhi-mytickets',
-    templateUrl: './mytickets.component.html',
-    styles: []
+  selector: 'jhi-mytickets',
+  templateUrl: './mytickets.component.html',
+  styles: []
 })
 export class MyticketsComponent implements OnInit {
-    tickets: ITicket[];
+  tickets?: ITicket[];
+  account?: Account | null;
+  eventSubscriber?: Subscription;
+  predicate: any;
+  reverse: any;
+  links: any;
+  totalItems: any;
 
-    account: Account;
-    eventSubscriber: Subscription;
-    predicate: any;
-    reverse: any;
-    links: any;
-    totalItems: any;
+  constructor(
+    private accountService: AccountService,
+    private ticketService: TicketService,
+    private jhiAlertService: JhiAlertService,
+    private eventManager: JhiEventManager,
+    private parseLinks: JhiParseLinks
+  ) {}
 
-    constructor(
-        private accountService: AccountService,
-        private ticketService: TicketService,
-        private jhiAlertService: JhiAlertService,
-        private eventManager: JhiEventManager,
-        private parseLinks: JhiParseLinks
-    ) {}
+  ngOnInit(): void {
+    this.loadSelf();
+    this.accountService.identity().subscribe((account) => {
+      this.account = account;
+    });
+    this.registerChangeInTickets();
+  }
 
-    ngOnInit() {
-        this.loadSelf();
-        this.accountService.identity().then((account: Account) => {
-            this.account = account;
-        });
-        this.registerChangeInTickets();
+  loadSelf(): void {
+    this.ticketService
+      .queryMyTickets()
+      .subscribe(
+        (res: HttpResponse<ITicket[]>) => this.paginateTickets(res.body ? res.body : [], res.headers),
+        (res: HttpErrorResponse) => this.onError(res.message)
+      );
+  }
+
+  sort(): string[] {
+    const result = [this.predicate + ',' + (this.reverse ? 'asc' : 'desc')];
+    if (this.predicate !== 'id') {
+      result.push('id');
     }
+    return result;
+  }
 
-    loadSelf() {
-        this.ticketService
-            .queryMyTickets()
-            .subscribe(
-                (res: HttpResponse<ITicket[]>) => this.paginateTickets(res.body, res.headers),
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
-    }
+  protected paginateTickets(data: ITicket[], headers: HttpHeaders): void {
+    //alert(headers.get('link'));
+    this.links = this.parseLinks.parse(headers.get('link') || '');
+    //alert('coucou');
+    this.totalItems = parseInt(headers.get('X-Total-Count') ? this.totalItems : '', 10);
+    this.tickets = data;
 
-    sort() {
-        const result = [this.predicate + ',' + (this.reverse ? 'asc' : 'desc')];
-        if (this.predicate !== 'id') {
-            result.push('id');
-        }
-        return result;
-    }
+  }
 
-    protected paginateTickets(data: ITicket[], headers: HttpHeaders) {
-        this.links = this.parseLinks.parse(headers.get('link'));
-        this.totalItems = parseInt(headers.get('X-Total-Count'), 10);
-        this.tickets = data;
-    }
+  protected onError(errorMessage: string): void {
+    this.jhiAlertService.error(errorMessage, null, '');
+  }
 
-    protected onError(errorMessage: string) {
-        this.jhiAlertService.error(errorMessage, null, null);
-    }
-
-    registerChangeInTickets() {
-        this.eventSubscriber = this.eventManager.subscribe('ticketListModification', response => this.loadSelf());
-    }
+  registerChangeInTickets(): void {
+    this.eventSubscriber = this.eventManager.subscribe('ticketListModification', (response : any) => this.loadSelf());
+  }
 }
 
 ```
@@ -266,31 +268,42 @@ import { MyticketsComponent } from 'app/mytickets/mytickets.component';
 The file should look like this:
 ```typescript
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { errorRoute, navbarRoute } from './layouts';
+import { RouterModule } from '@angular/router';
+import { errorRoute } from './layouts/error/error.route';
+import { navbarRoute } from './layouts/navbar/navbar.route';
 import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 import { MyticketsComponent } from 'app/mytickets/mytickets.component';
+
+import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(
-            [
-                {
-                    path: 'jhi-mytickets',
-                    component: MyticketsComponent
-                },
-                {
-                    path: 'admin',
-                    loadChildren: './admin/admin.module#BugTrackerJHipsterAdminModule'
-                },
-                ...LAYOUT_ROUTES
-            ],
-            { useHash: true, enableTracing: DEBUG_INFO_ENABLED }
-        )
-    ],
-    exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(
+      [
+        {
+          path: 'jhi-mytickets',
+          component: MyticketsComponent
+        },
+        {
+          path: 'admin',
+          data: {
+            authorities: ['ROLE_ADMIN']
+          },
+          canActivate: [UserRouteAccessService],
+          loadChildren: () => import('./admin/admin-routing.module').then(m => m.AdminRoutingModule)
+        },
+        {
+          path: 'account',
+          loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
+        },
+        ...LAYOUT_ROUTES
+      ],
+      { enableTracing: DEBUG_INFO_ENABLED }
+    )
+  ],
+  exports: [RouterModule]
 })
 export class BugTrackerJHipsterAppRoutingModule {}
 ```
@@ -316,5 +329,5 @@ Congratulations! You now know how to edit your front !
 Enter the next command line to start the next tutorial:
 
 ```bash
-cloudshell launch-tutorial -d ~/jhipster-guides/guides/07_testing_your_application.md;
+cloudshell launch-tutorial -d ~/cloudshell_open/jhipster-guides/guides/07_testing_your_application.md;
 ```

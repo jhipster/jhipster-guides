@@ -59,8 +59,6 @@ Performance tests are done with [Gatling](http://gatling.io/), and are located i
 
 To run Gatling tests, you must first install Gatling: please go to the [Gatling download page](https://gatling.io/download/) and follow the instructions there. Please note we do not allow to run Gatling from Maven or Gradle, as it causes some classpath issues with other plugins (mainly because of the use of Scala).
 
-**NOTE** We currently support Gatling 2.x only. You can download the latest 2.x version directly from [maven central](https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/2.3.1/gatling-charts-highcharts-bundle-2.3.1-bundle.zip).
-
 **Warning!** At the moment, those tests do not take into account the validation rules you may have enforced on your entities. Also tests for creating entities that have a required relationship with another entity will fail out of the box. You will anyway need to change those tests, according to your business rules, so here are few tips to improve your tests:
 
 *   On your running application, go to the `Administration > Logs` screen, and put `org.springframework` in `debug` mode. You will see the validation errors, for example.
@@ -76,7 +74,7 @@ For running Gatling tests on a microservice application, you have to:
 In this tutorial, we've given you an installation script for Gatling.
 Run the following command to install it:
 ```bash
-~/jhipster-guides/utils/install-gatling.sh
+~/cloudshell_open/jhipster-guides/utils/install-gatling.sh
 ```
 
 To run the Gatling test, head to:
@@ -88,7 +86,7 @@ cd ~/BugTrackerJHipster/src/test/gatling
 and run:
 
 ```bash
-~/jhipster-guides/gatling/bin/gatling.sh
+~/cloudshell_open/jhipster-guides/gatling/bin/gatling.sh
 ```
 
 Let's stress test our Project API, so choose **1**. You don't especially need to give a simulation id nor a description so you can just skip these parts.
@@ -130,5 +128,5 @@ Congratulations! You now know how to test your application !
 Enter the next command line to start the next tutorial:
 
 ```bash
-cloudshell launch-tutorial -d ~/jhipster-guides/guides/08_deploying_your_app.md;
+cloudshell launch-tutorial -d ~/cloudshell_open/jhipster-guides/guides/08_deploying_your_app.md;
 ```
