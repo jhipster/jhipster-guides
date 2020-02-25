@@ -14,10 +14,11 @@ JHipster should support the following CI systems out of the box:
 * [Travis](https://docs.travis-ci.com/user/getting-started/)
 * [GitLab CI](https://about.gitlab.com/gitlab-ci/)
 * [Azure Pipelines](https://docs.microsoft.com/fr-fr/azure/devops/pipelines/?view=vsts)
+* [GitHub Actions](https://github.com/features/actions)
 
 A more detailed guide for continuous integration is available on the official [jhipster](https://www.jhipster.tech/setting-up-ci/) website.
 
-In this tutorial we will focus on **Travis CI**.
+In this tutorial we will focus on **GitHub Actions**.
 
 ## Generate the configuration file
 
@@ -33,19 +34,22 @@ What CI/CD pipeline do you want to generate?
 * Jenkins pipeline
 * Azure Pipelines
 * GitLab CI
+* GitHub Actions
 * Travis CI
 
-In this tutorial we will choose **Travis CI**.
+In this tutorial we will choose **GitHub Actions**.
 
 ---
 
 What tasks/integrations do you want to include?
-* Analyze your code with \*Sonar\* (requires SONAR_TOKEN set on CI service)
+* Deploy your application to an \*Artifactory\*
+* Analyze your code with \*Sonar\* 
+* Build and publish a \*Docker\* image
 * Deploy to \*Heroku\* (requires HEROKU_API_KEY set on CI service)
 
 In this tutorial we won't use Sonar or Heroku, juste press **Enter** to skip it.
 
-The JHipster sub-generator will generate a yaml configuration file for travis in the <walkthrough-editor-open-file filePath="BugTrackerJHipster/.travis.yml">root project.</walkthrough-editor-open-file>
+The JHipster sub-generator will generate a yaml configuration file for GitHub in the <walkthrough-editor-open-file filePath="BugTrackerJHipster/.github/workflows/github-ci.yml">root project.</walkthrough-editor-open-file>
 
 
 
@@ -77,19 +81,17 @@ You can now push all the changes in the remote repository with the following com
 git push --set-upstream origin master
 ```
 
-## Travis CI
-Travis CI is a service to build and test software hosted on GitHub. When activated on a particular 
-repository, any push or pull request will trigger the build and tests using the <walkthrough-editor-open-file filePath="BugTrackerJHipster/.travis.yml">configuration file.</walkthrough-editor-open-file>
+## GitHub Actions
+GitHub Actions is a service to build and test software hosted on GitHub. When the repository contains the yaml file, any push or pull request will trigger the build and tests using the <walkthrough-editor-open-file filePath="BugTrackerJHipster/.github/workflows/github-ci.yml">configuration file.</walkthrough-editor-open-file>
 This is what we are going to do for the BugTracker project.
 
-1. Sign in to [Travis CI website](https://travis-ci.org/) with your GitHub account
+1. Sign in to [GitHub website](https://github.com/)
 
-2. Go to your [repository list](https://travis-ci.org/account/repositories)
+2. Go to your repository
 
-3. Activate Travis CI for the BugTrackerJHipster repository
+3. Click on Actions
 
-Travis CI is now installed on your BugTracker repository. You can commit and push a change to see 
- [Travis](https://travis-ci.org/) build and run the tests.
+Each commit or pull request will build and run the tests, you can follow the steps up on this interface.
 
 ---
 
