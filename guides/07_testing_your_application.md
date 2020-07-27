@@ -28,7 +28,7 @@ All those tests will be generated in the standard Maven folder `src/test`.
 Integration tests are done with the Spring Test Context framework, and are located in the folder `src/test/java`. JHipster will launch a specific Spring test context, which will be re-used along all tests, as:
 
 *   Your Spring beans should be stateless and thread-safe, and thus can be re-used across your different tests suites.
-*   Launching just one Spring context for all the tests if a lot faster than launching a new Spring context for each test.
+*   Launching just one Spring context for all the tests is a lot faster than launching a new Spring context for each test.
 
 This Spring test context will use a specific test database for the execution of the tests:
 
