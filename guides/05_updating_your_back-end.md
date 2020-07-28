@@ -131,7 +131,6 @@ public void deleteTicket() throws Exception {
 }
 ```
 
-
 And that's about it !
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
