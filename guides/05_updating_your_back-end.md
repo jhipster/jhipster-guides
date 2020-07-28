@@ -95,7 +95,7 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.data.domain.PageImpl;
 ```
 
-If we run our back-end unit and integration tests with the following command:
+If we ran our back-end unit and integration tests with the following command:
 
 ```Java
 ./mvnw -ntp clean verify -P-webpack
