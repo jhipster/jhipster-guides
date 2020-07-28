@@ -95,6 +95,42 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.data.domain.PageImpl;
 ```
 
+If we ran our back-end unit and integration tests with the following command:
+
+```Java
+./mvnw -ntp clean verify -P-webpack
+``` 
+
+we would encounter that our test TicketResourceIT.java is failing with message:
+
+```Java
+TicketResourceIT.deleteTicket:284 Status expected:<204> but was:<403>
+```
+
+It happens because we are trying to access the endpoint with the user who doesn't have administration role.
+The easiest fix for this is to add a user with administration role for this specific test like the following:
+
+```Java
+@Test
+@Transactional
+@WithMockUser(roles = {"USER", "ADMIN"}) // User with USER and ADMIN role
+public void deleteTicket() throws Exception {
+    // Initialize the database
+    ticketRepository.saveAndFlush(ticket);
+
+    int databaseSizeBeforeDelete = ticketRepository.findAll().size();
+
+    // Delete the ticket
+    restTicketMockMvc.perform(delete("/api/tickets/{id}", ticket.getId())
+        .accept(MediaType.APPLICATION_JSON))
+        .andExpect(status().isNoContent());
+
+    // Validate the database contains one less item
+    List<Ticket> ticketList = ticketRepository.findAll();
+    assertThat(ticketList).hasSize(databaseSizeBeforeDelete - 1);
+}
+```
+
 And that's about it !
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
