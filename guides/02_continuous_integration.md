@@ -78,7 +78,7 @@ git commit -m "initial commit"
 
 You can now push all the changes in the remote repository with the following command:
 ```bash
-git push --set-upstream origin master
+git push --set-upstream origin main
 ```
 
 ## GitHub Actions
