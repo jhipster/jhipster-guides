@@ -1,6 +1,7 @@
 # 01. Creating your application
 <walkthrough-tutorial-duration duration="15">
 </walkthrough-tutorial-duration>
+
 ## Quick Start
 
 In this tutorial, we will create an application named BugTrackerJHipster that is inspired from the issue tracking system from [GitHub](https://github.com/)
